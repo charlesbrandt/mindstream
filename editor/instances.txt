@@ -1,0 +1,16 @@
+*2011.11.17 21:41:37 edit
+/c/mindstream/editor/instances.txt
+/c/mindstream/editor/text_input.py
+/c/mindstream/editor/edit.py
+
+*2011.10.17 21:54:26 edit
+/c/mindstream/editor/instances.txt
+/c/mindstream/editor/edit.py
+
+*2011.10.17 21:53:23 todo
+/smiles/c/mindstream/editor/instances.txt
+/smiles/c/mindstream/editor/launch.sh
+/smiles/c/mindstream/editor/journal.txt
+/smiles/c/mindstream/editor/todo.txt
+
+

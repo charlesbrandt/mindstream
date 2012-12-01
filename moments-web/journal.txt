@@ -1,0 +1,419 @@
+*2012.01.31 17:50:21 complete
+finished this last week... now part of mindstream repository
+requested [2010.10.25 09:52:29] 
+release code to an open repository
+
+*2010.11.03 16:46:43 
+found these items from moments-web online entries
+got imported to main todo
+they have been completed for a while
+nice to see them work in the cycle though
+#2010.10.11 18:35:31 todo moments_web utc
+delete entry
+
+#2010.10.11 18:40:58 todo moments_web utc
+automatically convert line breaks to <br> on output
+
+#2010.10.11 18:40:32 todo moments_web utc
+input at the top of the screen
+
+#2010.10.11 18:35:38 todo moments_web utc
+mark entry complete
+
+
+
+*2010.11.02 18:40:46 complete
+retrieve a log 
+clear log
+also [2010.11.02 18:41:09] 
+retrieving is as simple as a copy and paste from the main page
+if that becomes cumbersome, can always impose a limit to the main page and then offer a download of full contents
+
+*2010.10.29 14:03:55 links python time dateutil
+http://www.google.com/#hl=en&expIds=17259,17311,17315,23628,23670,25752,25834,25854,25980,26209,26218,26328,26339,26637,26761,26788,26849,26992,27046,27095,27126&sugexp=ldymls&xhr=t&q=python+strftime&cp=11&pf=p&sclient=psy&aq=f&aqi=g4g-o1&aql=&oq=python+strf&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+python strftime - Google Search
+http://docs.python.org/library/time.html
+15.3. time — Time access and conversions — Python v2.7 documentation
+http://www.google.com/search?client=ubuntu&channel=fs&q=python+parse+time+for+timezone&ie=utf-8&oe=utf-8#sclient=psy&hl=en&source=hp&q=python+parse+timezone&aq=f&aqi=&aql=&oq=&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+python parse timezone - Google Search
+http://stackoverflow.com/questions/1101508/how-to-parse-dates-with-0400-timezone-string-in-python
+How to parse dates with -0400 timezone string in python? - Stack Overflow
+http://wiki.python.org/moin/WorkingWithTime
+WorkingWithTime - PythonInfo Wiki
+http://www.google.com/search?client=ubuntu&channel=fs&q=python+dateutil&ie=utf-8&oe=utf-8#sclient=psy&hl=en&q=python+dateutil+install&aq=f&aqi=g1g-s1g3&aql=&oq=python+dateutil&gs_rfai=&pbx=1&fp=988d8c3b30f09b32
+python dateutil install - Google Search
+http://labix.org/python-dateutil
+python-dateutil - Labix
+
+*2010.10.29 14:02:16 links
+http://en.wikipedia.org/wiki/Canvas_element
+Canvas element - Wikipedia, the free encyclopedia
+https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage
+Basic usage - MDC
+https://developer.mozilla.org/en/Canvas_tutorial%3aDrawing_shapes
+Drawing shapes - MDC
+https://developer.mozilla.org/en/Canvas_tutorial%3aBasic_animations
+Basic animations - MDC
+http://www.benjoffe.com/code/demos/canvascape/
+www.benjoffe.com | Canvascape
+http://www.google.com/#sclient=psy&hl=en&q=canvas+element+mouse+events&aq=f&aqi=&aql=&oq=&gs_rfai=&pbx=1&fp=fad0bccbc44b8016
+canvas element mouse events - Google Search
+http://people.mozilla.com/~jdicarlo/design-challenge/canvas-tutorial.html
+Design Challenge Tutorial - Prototyping UI with Canvas
+https://bespin.mozillalabs.com//index.html
+Bespin
+http://answers.oreilly.com/topic/1929-how-to-use-the-canvas-and-draw-elements-in-html5/
+How to Use the Canvas and Draw Elements in HTML5 - O'Reilly Answers
+http://building-iphone-apps.labs.oreilly.com/
+Building iPhone Apps with HTML, CSS, and JavaScript
+http://building-iphone-apps.labs.oreilly.com/ch01.html
+Chapter 1. Getting Started
+http://jquery.com/
+jQuery: The Write Less, Do More, JavaScript Library
+http://docs.jquery.com/How_jQuery_Works
+Tutorials:How jQuery Works - jQuery JavaScript Library
+http://jqtouch.com/
+jQTouch — jQuery plugin for mobile web development
+http://www.google.com/search?client=ubuntu&channel=fs&q=svg+element&ie=utf-8&oe=utf-8#sclient=psy&hl=en&q=svg+to+canvas&aq=f&aqi=g2g-m1g-o1&aql=&oq=&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+svg to canvas - Google Search
+http://dev.opera.com/articles/view/svg-or-canvas-choosing-between-the-two/
+SVG or Canvas? Сhoosing between the two - Opera Developer Community
+http://dev.opera.com/articles/view/svg-evolution-not-revolution/?page=3
+SVG: Evolution, Not Revolution - Opera Developer Community
+http://www.alistapart.com/articles/get-ready-for-html-5/
+A List Apart: Articles: Get Ready for HTML 5
+https://developer.mozilla.org/en/svg/faq
+Frequently Asked Questions - MDC
+https://developer.mozilla.org/en/SVG_In_HTML_Introduction#Discussion
+SVG In HTML Introduction - MDC
+https://developer.mozilla.org/en/SVG
+SVG - MDC
+http://www.google.com/search?client=ubuntu&channel=fs&q=svg+object+browser+support&ie=utf-8&oe=utf-8#sclient=psy&hl=en&q=scale+svg+in+html&aq=f&aqi=g4g-o1&aql=&oq=&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+scale svg in html - Google Search
+http://groups.google.com/group/mozilla.dev.tech.svg/browse_thread/thread/bcc7e520e2d8c17b/0c71dcd943b1fabc?pli=1
+Scaling SVG images in HTML - mozilla.dev.tech.svg | Google Groups
+http://en.wikipedia.org/wiki/Scalable_Vector_Graphics#Native_support
+Scalable Vector Graphics - Wikipedia, the free encyclopedia
+http://www.w3schools.com/svg/svg_inhtml.asp
+SVG in HTML
+http://www.google.com/search?client=ubuntu&channel=fs&q=google+request+handler+redirect&ie=utf-8&oe=utf-8
+google request handler redirect - Google Search
+http://code.google.com/appengine/docs/python/tools/webapp/requesthandlerclass.html#RequestHandler_redirect
+The RequestHandler Class - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/tools/webapp/utilmodule.html
+Utility Functions - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/tools/webapp/redirects.html
+Redirects, Headers and Status Codes - Google App Engine - Google Code
+http://www.google.com/search?client=ubuntu&channel=fs&q=google+query+filter+date&ie=utf-8&oe=utf-8#hl=en&expIds=17259,17311,17315,23628,23670,23945,25646,25752,25834,25854,25907,25980,26209,26218,26328,26339,26637,26761,26788,26849,26992,27046,27095,27126&sugexp=ldymls&xhr=t&q=google+app+engine+query+item+by+date&cp=18&pf=p&sclient=psy&aq=f&aqi=&aql=&oq=google+app+engine+query+item+by+date&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+google app engine query item by date - Google Search
+http://stackoverflow.com/questions/722728/google-appengine-date-range-not-returning-correct-results
+Google AppEngine: Date Range not returning correct results - Stack Overflow
+http://www.google.com/search?client=ubuntu&channel=fs&q=form+hidden&ie=utf-8&oe=utf-8
+form hidden - Google Search
+http://www.echoecho.com/htmlforms07.htm
+Forms : Hidden Field - HTML Tutorial
+http://www.google.com/search?client=ubuntu&channel=fs&q=form+textarea+value&ie=utf-8&oe=utf-8
+form textarea value - Google Search
+
+
+*2010.10.29 14:00:17 links
+http://localhost:8081/
+Moments: now
+http://localhost:8081/
+Moments: now
+http://present-moment.appspot.com/edit/21001
+Moments: now
+http://www.google.com/search?client=ubuntu&channel=fs&q=gql+query&ie=utf-8&oe=utf-8#sclient=psy&hl=en&q=gae+datastore+entity+key&aq=f&aqi=&aql=&oq=&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+gae datastore entity key - Google Search
+http://khaidoan.wikidot.com/google-app-engine-datastore-entity-group
+GAE Datastore - Keys and Entity Groups - Do only what matters
+http://stackoverflow.com/questions/2686371/using-key-id-on-gae-datastore-and-reverse-geocoding
+Using key().id() on GAE Datastore and reverse geocoding - Stack Overflow
+http://stackoverflow.com/questions/1998084/how-do-i-query-in-gql-using-the-entity-key
+How do I query in GQL using the entity key - Stack Overflow
+http://stackoverflow.com/questions/1796433/gql-query-on-date
+gql query on date - Stack Overflow
+http://stackoverflow.com/questions/2544565/filtering-by-entity-key-name-in-google-app-engine-on-python
+Filtering by entity key name in Google App Engine on Python - Stack Overflow
+http://code.google.com/appengine/docs/python/datastore/keyclass.html
+The Key Class - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/datastore/queryclass.html
+The Query Class - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/datastore/modelclass.html
+The Model Class - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#DateTimeProperty
+Types and Property Classes - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#datetime
+Types and Property Classes - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/datastore/gqlqueryclass.html
+The GqlQuery Class - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/gettingstarted/templates.html
+Using Templates - Google App Engine - Google Code
+http://www.djangoproject.com/documentation/0.96/templates/
+Django | The Django template language: For template authors | Django Documentation
+http://code.google.com/appengine/docs/python/gettingstarted/staticfiles.html
+Using Static Files - Google App Engine - Google Code
+http://www.google.com/#hl=en&expIds=17259,17311,17315,23628,23670,25752,25834,25854,25980,26209,26218,26328,26339,26637,26761,26788,26849,26992,27013,27046,27126&sugexp=ldymls&xhr=t&q=jquery+get+local+time&cp=15&pf=p&sclient=psy&aq=f&aqi=g4g-o1&aql=&oq=jquery+get+loca&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+jquery get local time - Google Search
+http://stackoverflow.com/questions/1258805/how-to-check-for-current-date-and-time-in-jquery
+how to check for current date and time in Jquery - Stack Overflow
+https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date
+Date - MDC
+http://stackoverflow.com/questions/660927/how-can-i-obtain-the-local-time-in-jquery
+How can I obtain the local time in jQuery? - Stack Overflow
+http://plugins.jquery.com/plugin-tags/clock
+clock | jQuery Plugins
+http://www.radoslavdimov.com/jquery-plugins/jquery-plugin-digiclock/#Examples
+jDigiClock - Digital Clock (HTC Hero inspired).
+http://plugins.jquery.com/project/jclock
+jClock - Simple Clock | jQuery Plugins
+http://www.electrictoolbox.com/jquery-get-set-form-values/
+How to get and set form element values with jQuery
+http://www.google.com/search?client=ubuntu&channel=fs&q=google+app+engine+url+parameters&ie=utf-8&oe=utf-8#sclient=psy&hl=en&q=google+app+engine+jquery&aq=f&aqi=g-s1g-sx3g-o1&aql=&oq=&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+google app engine jquery - Google Search
+http://pythoughts.com/ajax-with-google-app-engine
+AJAX with Google App Engine
+http://stackoverflow.com/questions/211648/building-ajax-form-in-google-app-engine
+Building Ajax Form in Google App Engine - Stack Overflow
+http://code.google.com/appengine/docs/python/tools/webapp/running.html
+Running the Application - Google App Engine - Google Code
+http://www.google.com/#sclient=psy&hl=en&q=google+app+engine+url+wildcard&aq=f&aqi=&aql=&oq=&gs_rfai=&pbx=1&fp=9a951961ff9ba31d
+google app engine url wildcard - Google Search
+http://stackoverflow.com/questions/2360638/google-app-engine-give-arguments-to-a-script-from-url-handler
+Google App Engine: Give arguments to a script from URL handler? - Stack Overflow
+http://code.google.com/appengine/docs/python/tools/webapp/requestclass.html
+The Request Class - Google App Engine - Google Code
+http://routes.groovie.org/introduction.html
+Introduction — Routes v1.12.3 documentation
+file:///tmp/jclock.html
+jQuery plugin: jclock
+
+*2010.10.26 15:20:24 complete
+requested [2010.10.11 22:36:43] 
+mark entry as complete
+
+*2010.10.26 15:20:22 complete
+requested [2010.10.11 22:36:39] 
+delete entry
+
+*2010.10.25 10:43:05 complete
+I think this is working now
+requested [2010.10.11 22:36:52] 
+edit entry (post update)
+
+*2010.10.25 10:17:40 hidden input html form
+  <div><input type="hidden" name="id" value="{{ id }}"></div>
+
+
+*2010.10.11 22:41:59 
+document next phase when it is time to split into multiple files
+also [2010.10.22 13:22:30] 
+not sure that a document works then
+at that point you need to consider your goals
+design goals
+and simply think on the topic
+
+*2010.10.18 07:52:55 url google_app_engine wildcard parameters ids
+figure out how to pass in parameters over the URL... separate module needed for that?
+manual URL path parsing?
+
+also [2010.10.22 11:14:33] 
+http://stackoverflow.com/questions/2360638/google-app-engine-give-arguments-to-a-script-from-url-handler
+looks like:
+
+class DetailHandler(webapp.RequestHandler):
+    def get(self, detail_id):
+      # put your code here, detail_id contains the passed variable
+
+def main():
+  # Note the wildcard placeholder in the url matcher
+  application = webapp.WSGIApplication([('/details/(.*), DetailHandler)]
+
+should do it
+
+*2010.10.12 15:40:28 complete
+finished earlier this morning
+requested [2010.10.11 22:41:42] 
+check code in
+
+*2010.10.11 21:05:45 complete
+fields are there 
+requested [2010.10.09 16:32:46] 
+in add entry:
+current date input
+tags input
+
+*2010.10.11 21:04:57 complete
+think this step at least is going after today
+
+requested [2010.09.16 10:17:41] 
+start with a simple hello world tutorial just using app engine itself
+no framework at this point
+
+see:
+cd /c/technical/python/google_app_engine/
+./launch.sh 
+
+or just view:
+/c/technical/python/google_app_engine/setup.txt
+
+*2010.10.11 10:21:22 links
+http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html
+Types and Property Classes - Google App Engine - Google Code
+http://www.google.com/search?client=ubuntu&channel=fs&q=html+form+input+types&ie=utf-8&oe=utf-8
+html form input types - Google Search
+http://www.javascript-coder.com/html-form/html-form-tutorial-p1.phtml
+An easy to follow HTML form tutorial
+http://www.javascript-coder.com/html-form/html-form-tutorial-p2.phtml
+HTML Form Tutorial: More Input Elements
+
+*2010.10.09 16:35:35 
+added some notes earlier this afternoon... main pieces are getting there
+just need to define what is missing.
+
+*2010.09.20 18:59:15 golden_present quotes app links
+http://www.google.com/#hl=en&expIds=17259,17311,17315,23628,23670,25221,25753,25834,25854,25856,25901,25980,26209,26218,26328,26340,26446,26515,26569&sugexp=ldymls&xhr=t&q=google+app+engine+initialize+data&cp=33&pf=p&sclient=psy&aq=f&aqi=&aql=&oq=google+app+engine+initialize+data&gs_rfai=&pbx=1&fp=6f32b8af52b7e0b8
+google app engine initialize data - Google Search
+http://appengine-cookbook.appspot.com/
+Google Cookbook
+http://appengine-cookbook.appspot.com/cat/?id=ahJhcHBlbmdpbmUtY29va2Jvb2tyFwsSCENhdGVnb3J5IglEYXRhc3RvcmUM
+App Engine Recipes: Datastore
+http://appengine-cookbook.appspot.com/recipe/yearmonthproperty-query-by-yyyy-mm/?id=ahJhcHBlbmdpbmUtY29va2Jvb2tylwELEgtSZWNpcGVJbmRleCI8YWhKaGNIQmxibWRwYm1VdFkyOXZhMkp2YjJ0eUZ3c1NDRU5oZEdWbmIzSjVJZ2xFWVhSaGMzUnZjbVVNDAsSBlJlY2lwZSI-YWhKaGNIQmxibWRwYm1VdFkyOXZhMkp2YjJ0eUZ3c1NDRU5oZEdWbmIzSjVJZ2xFWVhSaGMzUnZjbVVNNjAM
+App Engine Recipe - YearMonthProperty, query by YYYY-MM
+http://code.google.com/appengine/docs/python/gettingstarted/
+Getting Started: Python - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/config/cron.html
+Scheduled Tasks With Cron for Python - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/config/cron.html#Securing_URLs_for_Cron
+Scheduled Tasks With Cron for Python - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/datastore/overview.html
+Datastore Python API Overview - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/datastore/creatinggettinganddeletingdata.html
+Creating, Getting and Deleting Data - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#Text
+Types and Property Classes - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/gettingstarted/staticfiles.html
+Using Static Files - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/gettingstarted/usingdatastore.html
+Using the Datastore - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/gettingstarted/templates.html
+Using Templates - Google App Engine - Google Code
+http://code.google.com/p/google-app-engine-samples/downloads/detail?name=guestbook_10312008.zip
+guestbook_10312008.zip - google-app-engine-samples - The python code for the snippets presented in the guestbook example from the "Getting Started" docs. - Project Hosting on Google Code
+http://code.google.com/p/google-app-engine-samples/wiki/GoogleAppEngineSamples
+GoogleAppEngineSamples - google-app-engine-samples - Introduction to the Google App Engine Sample Code - Project Hosting on Google Code
+http://www.google.com/search?client=ubuntu&channel=fs&q=mako+google+app+engine&ie=utf-8&oe=utf-8
+mako google app engine - Google Search
+http://blog.pansapiens.com/2008/06/24/mako-templates-in-google-app-engine-seems-to-work-for-me/
+Mako templates in Google App Engine: seems to work for me at Your bones got a little machine
+http://groups.google.com/group/mako-discuss/browse_thread/thread/ab80a9ccd7fc2f0e/f23831e13ed3fadc
+0.3.4 google app engine compatible? - Mako Templates for Python | Google Groups
+http://www.google.com/search?client=ubuntu&channel=fs&q=python+split_lines&ie=utf-8&oe=utf-8#sclient=psy&hl=en&q=google+app+engine+simplejson&aq=f&aqi=g1&aql=&oq=&gs_rfai=&pbx=1&fp=7b3e9e0669ddb0a1
+google app engine simplejson - Google Search
+http://blog.infoentropy.com/Simple_JSON_library_Google_App_Engine
+Simple JSON library for Google App Engine | InfoEntropy
+http://www.google.com/search?client=ubuntu&channel=fs&q=google+app+engine+json&ie=utf-8&oe=utf-8#hl=en&&sa=X&ei=CY6WTMn_ComknQf_24nYCA&sqi=2&ved=0CBkQvwUoAQ&q=google+app+engine+dev+server+datastore&spell=1&fp=6f32b8af52b7e0b8
+google app engine dev server datastore - Google Search
+http://code.google.com/appengine/docs/python/tools/devserver.html
+The Python Development Server - Google App Engine - Google Code
+http://code.google.com/appengine/articles/rpc.html
+Using AJAX to Enable Client RPC Requests - Google App Engine - Google Code
+http://www.google.com/search?client=ubuntu&channel=fs&q=python+json&ie=utf-8&oe=utf-8#q=google+app+engine+Text+data+empty&hl=en&prmd=ivdf&ei=tbCWTI76J8mjnQf7uqipBw&start=10&sa=N&fp=7b3e9e0669ddb0a1
+google app engine text data empty - Google Search
+http://www.terminally-incoherent.com/blog/2009/03/05/running-a-blog-on-google-appengine/
+Running a Blog on Google Appengine « Terminally Incoherent
+http://blog.suinova.com/2009/03/tutorial-on-bulkloading-data-onto-app.html
+Suinova Designs: A tutorial on bulkloading data onto App Engine Datastore
+http://appgallery.appspot.com/
+Applications Gallery - Google App Engine - Google Code
+http://code.google.com/appengine/docs/quotas.html
+Quotas - Google App Engine - Google Code
+http://docs.python.org/library/json.html
+18.2. json — JSON encoder and decoder — Python v2.7 documentation
+https://appengine.google.com/
+Applications Overview
+https://appengine.google.com/logs?&app_id=golden-present&version_id=1.344937209350226143#
+Logs - The Golden Present
+http://localhost:8080/init2
+http://localhost:8080/init2
+http://golden-present.appspot.com/
+http://golden-present.appspot.com/
+http://www.google.com/search?client=ubuntu&channel=fs&q=integral+yoga+golden+present&ie=utf-8&oe=utf-8
+integral yoga golden present - Google Search
+http://www.thegoldenpresent.org/
+The Golden Present
+
+
+*2010.09.16 10:19:09 frameworks app_engine
+sometimes frameworks can get in the way,
+especially in the case of app engine when it gives you so much of what frameworks normally give you (mvc)
+I guess it's more of a model and controller, but view can be added in (or split out) when needed (keep it simple for now)
+
+*2010.09.16 10:20:10 
+skipping this
+simplifying further
+requested [2010.07.18 10:48:18] 
+run through all of tutorial using moments as destination
+and tipfy as foundation
+
+*2010.08.07 12:25:12 links tipfy
+http://code.google.com/appengine/docs/python/overview.html
+App Engine Python Overview - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/gettingstarted/
+Getting Started: Python - Google App Engine - Google Code
+http://code.google.com/appengine/docs/python/gettingstarted/usingusers.html
+Using the Users Service - Google App Engine - Google Code
+http://www.tipfy.org/docs/api/tipfy.ext.auth.html
+tipfy.ext.auth — Tipfy v0.6 documentation
+http://www.tipfy.org/wiki/tutorials/auth/?version=8001
+User Authentication Tutorial - tipfy.org
+http://code.google.com/appengine/docs/python/tools/uploadinganapp.html
+Uploading and Managing a Python App - Google App Engine - Google Code
+http://www.tipfy.org/
+tipfy.org
+http://www.tipfy.org/docs/
+Welcome to Tipfy’s API documentation! — Tipfy v0.6 documentation
+http://www.tipfy.org/wiki/
+Welcome to Tipfy's Wiki! - tipfy.org
+http://www.tipfy.org/wiki/tutorials/
+Tutorials - tipfy.org
+http://www.tipfy.org/wiki/guide/
+Tipfy's Guide to the Gaelaxy - tipfy.org
+http://www.tipfy.org/wiki/guide/installation/
+Tipfy Installation - tipfy.org
+
+*2010.07.18 10:47:45 complete
+this was set up under charlesbrandt.appspot.com
+requested [2010.07.09 10:13:57] 
+set up new google app engine instance for moments
+can use contextiskey.com/org domain for this
+
+*2010.07.16 11:46:50 
+http://localhost:8080/
+http://charlesbrandt.appspot.com/
+
+*2010.07.11 22:03:53 
+deployment of hello world worked... cool!
+
+*2010.07.11 22:03:34 complete
+requested [2010.07.11 19:18:36] 
+extract tipfy
+run locally
+deploy to google account
+
+*2010.07.11 19:18:35 complete
+requested [2010.07.11 18:50:00] 
+download tipfy
+
+*2010.07.11 20:29:56 
+python 2.5 installed to netbook... should be ready now.
+
+*2010.07.11 18:49:10 complete
+/c/sites/google_app_engine/setup.txt
+
+requested [2010.07.09 10:13:57] 
+start a new document / script,
+similar to new system install
+walk through the steps for getting going with a new app
+that is always so difficult
+and easy to forget once it is in place

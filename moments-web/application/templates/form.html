@@ -1,0 +1,16 @@
+<form action="{{ action }}" method="post">
+  <div>
+    <input type="text" name="date" value="{{ date }}" size="30">   
+    <object type="image/svg+xml" data="/images/now.svg" height="30" width="30">
+      <!-- fall-back HTML content goes here -->
+      <p>Sorry! Your browser does not support SVG!  
+	Please use a modern browser.</p>
+    </object>
+
+    <input type="text" name="tags" value="{{ tags }}" size="30">
+  </div>
+  <div><textarea name="content" rows="4" cols="60">{{ content }}</textarea></div>
+  <div><input type="submit" value="Now"></div>
+</form>
+<div>{{ complete }} {{ delete }}</div>
+<div><a href='/'>Home</a></div>

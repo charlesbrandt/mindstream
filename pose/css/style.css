@@ -1,0 +1,166 @@
+/* remember: .class #id */
+body {
+    background: #FFFFFF;
+    color: #454456;
+    font: 1em Arial, Helvetica, sans-serif;
+}
+
+.directory {
+    text-align:left;
+/* style="float: left" */
+}
+
+.file {
+    text-align:left;
+    clear: both;
+}
+
+.content { 
+    text-align:left;
+    width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 50;
+    margin-bottom: 50;
+}
+
+#centered {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+.center { 
+    text-align: center;
+}
+
+table.center { 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+IMG.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+#question {
+    text-align: left;
+}
+
+div.row {
+    clear: both;
+}
+div.row span.left {
+    float: left;
+}
+
+div.row span.right {
+    float: right;
+}
+
+div.centered { 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span.text {
+    color: #000000;
+    font-size:14px;
+    line-height:15px;
+}
+
+span.calendar {
+    font-size:14px;
+    line-height:15px;
+}
+
+a:link	{
+    padding: 0px 0px; 
+    margin:0; 
+}
+
+a:visited {
+    padding: 0px 0px; 
+    margin:0; 
+}
+
+
+
+/*Style for the nav menu */
+.nav {
+    /*
+      position: relative;
+      margin: -18px 0 10px auto;
+      width: 750px;
+      */
+    line-height: 2em;
+    width: 100%;
+    text-align:center; 
+}
+
+.nav ul { 
+    padding:5px; 
+    margin:0; 
+    padding:0; 
+} 
+
+.nav ul li { 
+    float:left; 
+    list-style:none; 
+    margin:0; 
+} 
+
+a.nav:link, a.nav:visited	{
+    padding: 2px 15px; 
+    margin:0; 
+    color: #8C6838;
+    text-decoration: none;
+}
+
+a.nav:hover	{
+    color: #EFE9ED;
+    background: #8C6838;
+    text-decoration: none;
+}
+
+
+/* Style for the footer */
+#footer	{
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    padding: 2px;
+    margin: auto; 
+    border-top: 1px solid #EFE9ED;
+    font-size: 11;
+    /*font-size: 0.8em;*/
+    width: 750px;
+}
+
+.largestTag {
+  font-size: xx-large;
+}
+.largerTag {
+  font-size: xx-large;
+}
+.largeTag {
+  font-size: x-large;
+}
+.mediumTag {
+  font-size: x-large;
+}
+.smallTag {
+  font-size: large;
+}
+.smallerTag {
+  font-size: medium;
+}
+.tinyTag {
+  font-size: small;
+}
+.tiniestTag {
+  font-size: xx-small;
+}

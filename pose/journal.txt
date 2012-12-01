@@ -1,0 +1,137 @@
+*2012.12.01 11:40:31 
+finished refactoring mindstream.sources to medley.sources (and all referring sources)
+
+*2012.12.01 10:51:16 
+A collection of scripts, applications and modules for use with the moments library. These applications include a desktop application for creating moments/journals, scripts for sorting and processing moments, web based application to browse moments, and a desktop application to help with manually tagging moments.  For moments, please see: http://bitbucket.org/cbrandt/moments
+
+*2012.12.01 10:23:47 complete
+I think this was added last month
+requested [2012.11.04 11:44:33] 
+add recent months to top nav
+timeline takes too long to load
+and usually is not what I'm after when searching based on time...
+usually want to look at what was happening comprehensively in a specific range of days or week (based on a given relevant moment found via tags)
+
+*2012.08.23 09:54:31 
+following items were in the header of application split
+I think they are complete by now!
+===========
+TODO:
+===========
+#2011.06.16 11:13:34
+convert this to use a local journal server for all data
+
+#2011.06.25 10:03:08
+converting to use journal server exclusively
+
+
+*2012.08.03 15:40:46 
+	%include image_tiny path=previous, alt="<---"
+
+
+*2012.08.03 15:33:03 
+{{ parent.relative_path_parts()[-1][0] }} : 
+
+*2012.08.03 15:32:04 
+  <span class="selected">
+    ${h.image(c.image.get_size('tiny'), c.image.ctime)}
+  </span>
+
+    % if c.admin:
+  <span class="image">
+    + -><br>
+    - -><br>
+  </span>
+  <span class="image">
+    ${h.link_to(h.image(c.next.get_size('tiny'), "  ->"), c.next.custom_relative_path("/image"), accesskey="d")}<br>
+  </span>
+
+    % else:
+  <span class="image">
+    ${h.link_to(h.image(c.next.get_size('tiny'), "  ->"), c.next.custom_relative_path("/image"), accesskey="d")}<br>
+  </span>
+    % endif
+
+    % for i in c.nexts:
+  <span class="image">
+    ${h.link_to(h.image(i.get_size('tiny'), i.ctime), i.custom_relative_path("/image"))}<br>
+  </span>
+  % endfor
+
+</div>
+
+<div class="row">
+<span class="image"> 
+  % if c.link_full:
+  ${h.link_to(h.image(c.image.get_size('large'), c.image.ctime), c.image.custom_relative_path(prefix='/file'))}
+  % else:
+  ${h.image(c.image.get_size('large'), c.image.ctime)}
+  % endif
+</span>
+</div>
+
+
+*2012.03.01 18:51:27 complete
+seems like:
+http://localhost:8088/range/201202/20120229235959
+should work
+it shows cloud in addition to entries
+requested [2011.09.07 11:38:00] pose
+add ability to filter based on time range for pose cloud view
+(e.g. 1 year window)
+
+*2012.03.01 18:50:05 complete
+this exists, at least in a crude (and very processor intensive) form
+requested [2011.12.31 12:37:14] 
+time line view
+
+*2011.12.31 12:35:31 complete
+recreating RemoteJournal for each request fixes this, and does not cause any delays
+requested [2011.10.10 08:34:13] 
+why does connection to json / remote server disappear?
+maybe need to figure out jsonp
+
+*2011.08.18 07:24:27 complete
+got this working a few days ago. it's cool!
+requested [2011.08.15 18:03:31] search
+!!!
+use an auto complete, javascript form to "search" for matching tags
+
+*2011.08.14 09:33:53 complete
+can do this a number of different ways now using moments2.RemoteJournal
+requested [2011.04.18 19:16:47] 
+way to reload / rescan currently loaded journal/mindstream
+without shutting down the server
+that way can launch the server interactively
+and keep it running
+without restarting to pick up changes
+(would be nice if reload was intelligent)
+
+*2011.06.25 17:44:01 complete pose2
+bottle.TEMPLATE_PATH.append('./templates/')
+does the trick
+requested [2011.06.16 11:08:21] 
+rename template directory to 'template'
+that is what is used everywhere else
+'views' is hard to remember
+
+*2011.01.13 16:07:25 complete
+/cloud now works.. yay!
+requested [2011.01.12 19:07:44] 
+tag cloud of all tags available in currently loaded journal
+
+*2011.01.05 10:46:42 
+  %for i in d.images:
+  <a href="/path/{{i.to_relative()}}">
+  %include image_tiny_template path=i
+  </a>
+  %end  
+
+*2010.12.30 18:09:58 
+separate repository created.
+
+*2010.12.30 14:32:51 
+not saving instances...
+not even sure if server code belongs in this repository...
+it's more of a pose version 2
+

@@ -1,0 +1,99 @@
+*2011.03.28 22:16:04 todo present_moment moments_web moments_web utc
+present-moment.appspot.com text box should auto expand when text grows 
+javascript textarea expand 
+this looks the most straightforward: 
+<!DOCTYPE HTML> 
+<html> 
+<body> 
+<textarea id="txtarea" style="width: 100px;,font-size: 16px;line-height: 1; height: 16px;"></textarea> 
+<script type="text/javascript"> 
+
+document.getElementById('txtarea').addEventListener('keyup', function () { 
+this.style.height = 0; // this is necessary to make it shrink when deleting
+this.style.height = this.scrollHeight + 'px'; 
+}, false); 
+
+</script> 
+</body> 
+</html> 
+http://snipplr.com/view.php?codeview&id=16039 
+
+http://www.google.com/search?q=javascript+textarea+expand&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a 
+
+*2011.03.28 22:18:56 todo present_moment moments_web moments_web utc
+-button to add labels to fields (on by default?) 
+-also configure layout of fields for user 
+-maybe * for 'now' button?
+
+*2010.12.07 15:01:11 sticky dev_links 
+http://localhost:8081/about
+Problem loading page
+http://present-moment.appspot.com/
+Moments: now
+http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#datetime
+Types and Property Classes - Google App Engine - Google Code
+http://docs.python.org/release/2.5.2/lib/datetime-tzinfo.html
+5.1.6 tzinfo Objects
+file:///c/sites/charlesbrandt.com/generate/output/index.html
+charlesbrandt.com:
+
+*2010.10.25 10:11:51 
+submit format as a microformat
+
+*2010.10.25 11:17:41 
+parse entries for [now] tags
+insert time 
+
+*2010.10.22 15:33:48 
+user setting/configuration page
+set time zone
+store time with correct time zone.
+
+*2010.10.26 08:42:54 
+should be an alert message mechanism
+
+*2010.10.26 08:07:10 
+add javascript query to verify delete of entry
+(and clear mind)
+
+*2010.09.27 13:17:56 
+post a log... store it as moments in datastore
+
+*2010.10.23 14:52:32 present_moment webapp todo moments_web utc
+easy way to develop and update present moment web app
+from anywhere
+bespin instance
++ a way to deploy
+
+*2010.10.23 14:52:56 present_moment webapp todo moments_web utc
+ctl-enter should post the current entry
+
+*2010.10.11 18:34:42 todo moments_web utc
+set time zone per user. currently actually 14:34
+
+*2010.10.11 18:40:20 todo moments_web utc
+parse input for other moments
+
+*2010.10.21 20:42:41 todo 20101021
+check if your-mind.appspot.com is available
+or open-mind
+
+*2010.10.22 11:10:15 
+should be a way to create moments without logging in... all moments are passed in to form every time in the anonymous version.
+warning that navigating away from the page / closing browser will lose all information.
+might also be a good chance to use local browser storage mechanisms
+
+also [2010.10.22 13:19:51] 
+this might be where javascript comes in to play
+
+*2010.10.11 22:37:49 
+review interface for pose
+moments web should be even simpler
+but can glean any insight from that.
+
+*2010.10.11 10:21:41 links
+http://localhost:8081/
+http://localhost:8081/
+http://present-moment.appspot.com/
+http://present-moment.appspot.com/
+

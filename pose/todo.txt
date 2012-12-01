@@ -1,0 +1,88 @@
+*2012.12.01 11:25:59 
+make application-split.py the main file...
+does application still have anything of relevance?
+*2012.01.27 13:26:04 
+pose/application-split.py is the one most used...
+is it time to get rid of pose/application.py?
+
+also [2012.08.23 09:59:00] 
+split at least implies that there is a second process that is needed
+(because it does not load the journal data)
+
+also [2012.12.01 11:27:06] 
+that should be explained on the home page if the second process has not been loaded. 
+
+
+*2012.12.01 10:51:05 
+reset repository 
+
+*2012.12.01 10:24:29 
+default screen should not check for a remote journal
+should show a summary of what is available...
+then links to common options...
+
+can't always remember the different options
+
+*2012.08.23 09:49:54 
+would be nice to have editing capabilities built in to pose "/tagged/[tag]" listing
+this would make it easier to edit/update entry data
+tags could be added and removed
+
+it would also be really cool to be able to drag the "*" of a specific moment to the tag that takes priority in order to re-organize a specific file
+that action could move the moment from its current source text file to the default destination text file for the new tag.  (ideally it would also update this information in any memory indexes for the loaded journal)
+
+that way, when loading the source text file outside of pose, everything should be targeted to that specific context
+
+*2012.08.02 22:42:50 
+edit mode for files
+similar to 
+/path
+
+*2011.08.15 06:56:37 
+should be 2 different ways to edit...
+1) launch editor on local machine if source is local
+2) launch text entry field in browser that submits file changes to server (works remotely).  This should also have a configurable text entry field... might be good to use javascript to customize behavior
+
+*2012.08.02 22:44:33 
+add in sorting mechanism
+consider best way for grouping
+
+
+
+
+
+
+
+*2011.12.31 12:37:21 
+cloud listing
+
+*2011.09.07 11:41:52 pose
+scan a directory with photos
+convert to moments, adding tags based on directory
+then import to pose
+should do this dynamically (static files won't always reflect latest tags based on path)
+
+*2010.05.06 16:58:33 
+integrate journal w/ photos w/ audio/ etc
+make a summary view of all of those for each day
+
+*2011.12.31 12:33:50 
+when launching
+use moment.source to find source
+if source is not being kept through web version, add that back in (should be there though)
+
+
+
+*2011.01.11 13:21:29 plugin python yapsy
+http://www.google.com/#sclient=psy&hl=en&q=python%20plugin%20system&aq=3&aqi=g4g-s1&aql=&oq=&gs_rfai=&pbx=1&fp=a20cfd04ba3c5cf9&pf=p&pdl=300
+http://yapsy.sourceforge.net/
+http://lateral.netmanagers.com.ar/weblog/posts/BB923.html
+
+*2010.12.30 14:31:47 
+launch application:
+cd /c/pose2/
+python application.py
+
+open chrome
+http://localhost:8080/path/binaries/journal/2010
+

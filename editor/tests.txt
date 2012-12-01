@@ -1,0 +1,19 @@
+*2011.11.21 08:15:37 
+going to copy these entries out to journal before saving incase there are bugs
+this is a good test case
+
+*2011.11.21 08:15:24 also sample test
+
+*2011.11.21 08:13:50 also tagging tags
+this is a standard entry with "also tagging tags" as the tags
+but has data as well
+next entry will just have "also sample test" for tags
+no data
+
+*2011.11.21 08:13:36 
+this is an entry with no tags initially
+
+*2011.11.21 08:13:24 test
+this is a test entry... normal entry
+
+*2011.11.21 08:13:18 

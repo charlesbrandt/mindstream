@@ -1,0 +1,109 @@
+*2012.12.01 11:53:56 code
+/c/mindstream/pose/instances.txt
+/c/mindstream/pose/js/journal.js
+/c/mindstream/pose/cloud.py
+/c/mindstream/pose/application.py
+
+*2012.11.04 11:49:39 views
+/c/mindstream/pose/instances.txt
+/c/mindstream/pose/templates/image_tiny.tpl
+/c/mindstream/pose/templates/image.tpl
+/c/mindstream/pose/templates/series_summary.tpl
+/c/mindstream/pose/templates/series.tpl
+/c/mindstream/pose/templates/sort.tpl
+/c/mindstream/pose/templates/directory.tpl
+/c/mindstream/pose/templates/directory_summary.tpl
+/c/mindstream/pose/templates/footer.tpl
+/c/mindstream/pose/templates/header.tpl
+/c/mindstream/pose/templates/entries.tpl
+/c/mindstream/pose/templates/navigation.tpl
+/c/mindstream/pose/css/style.css
+/c/mindstream/pose/templates/site.tpl
+
+*2012.08.05 12:51:06 views
+/c/mindstream/pose/instances.txt
+/c/mindstream/pose/templates/series.tpl
+/c/mindstream/pose/templates/image.tpl
+/c/mindstream/pose/templates/image_tiny.tpl
+/c/mindstream/pose/templates/series_summary.tpl
+/c/mindstream/pose/templates/directory_summary.tpl
+/c/mindstream/pose/templates/directory.tpl
+/c/mindstream/pose/templates/sort.tpl
+/c/mindstream/pose/templates/header.tpl
+/c/mindstream/pose/templates/footer.tpl
+/c/mindstream/pose/templates/entries.tpl
+/c/mindstream/pose/css/style.css
+
+*2011.08.17 00:04:43 views
+/c/mindstream/pose/instances.txt
+/c/mindstream/pose/templates/navigation_template.tpl
+/c/mindstream/pose/templates/javascript_template.tpl
+/c/mindstream/pose/templates/header_template.tpl
+/c/mindstream/pose/templates/entries_template.tpl
+/c/mindstream/pose/templates/site_template.tpl
+/c/mindstream/pose/templates/directory_template.tpl
+
+*2011.08.17 00:03:51 code
+/c/mindstream/pose/instances.txt
+/c/mindstream/pose/instances.txt
+/c/mindstream/pose/templates/javascript_template.tpl
+/c/mindstream/pose/js/journal.js
+/c/mindstream/pose/cloud.py
+/c/mindstream/pose/application-split.py
+
+*2011.08.17 00:02:53 todo
+/c/mindstream/pose/instances.txt
+/c/mindstream/pose/launch.sh
+/c/mindstream/pose/journal.txt
+/c/mindstream/pose/todo.txt
+
+*2011.08.14 09:35:27 code
+/c/pose2/instances.txt
+/c/pose2/templates/javascript_template.tpl
+/c/pose2/js/journal.js
+/c/pose2/application-split.py
+
+*2011.08.08 23:22:35 views
+/c/pose2/instances.txt
+/c/pose2/templates/directory_template.tpl
+
+*2011.07.29 15:37:09 code
+/c/pose2/instances.txt
+/c/pose2/js/journal.js
+/c/pose2/application-split.py
+/c/pose2/templates/javascript_template.tpl
+/c/moments/moments/journal_server.py
+
+*2011.06.25 17:37:20 code
+/c/pose2/instances.txt
+/c/pose2/application.py
+/c/pose2/javascript.html
+/c/moments/moments/journal_server.py
+/c/pose2/application-split.py
+
+*2011.06.25 09:57:39 code
+/c/pose2/instances.txt
+/c/pose2/javascript.html
+/c/moments/moments/journal_server.py
+/c/pose2/application.py
+
+*2011.06.25 09:37:25 code
+/c/pose2/instances.txt
+/c/moments/moments/journal_server.py
+/c/pose2/application.py
+
+*2010.12.30 18:12:23 views
+/c/pose2/instances.txt
+/c/pose2/views/directory_template.tpl
+
+*2010.12.30 17:17:24 code
+/c/pose2/instances.txt
+/c/pose2/application.py
+
+*2010.12.30 17:15:35 todo
+/c/pose2/instances.txt
+/c/pose2/launch.sh
+/c/pose2/journal.txt
+/c/pose2/todo.txt
+
+

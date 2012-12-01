@@ -1,0 +1,16 @@
+*2012.01.16 06:08:07 todo
+investigate kivy... 
+consider recreating this editor in it
+would be nice to have a smooth tranistion 
+
+*2011.12.01 13:37 todo mindstream
+mindstream edit, select text doesn't work on netbook... why?
+also a kill line (ctrl-k) like emacs would also help with this
+
+*2011.12.17 09:51:40 todo editor interface
+last timestamp is helpful for noting when last entry was completed
+but it might also be nice to access a hidden option (on mouse over, show button... upper left or right corner of screen)
+to see recent history
+could even be an editing instance, similar to this one
+toward the right
+

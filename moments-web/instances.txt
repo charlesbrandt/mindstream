@@ -1,0 +1,66 @@
+*2010.09.27 17:54:00 moments
+/c/moments-web/instances.txt
+/c/moments-web/application/server.py
+/c/moments-web/application/app.yaml
+/c/pose/pose/config/routing.py
+
+*2010.09.22 18:55:31 quotes
+/c/moments-web/instances.txt
+/c/moments-web/launch.sh
+/c/mindstream/mindstream/launch.py
+/c/moments-web/quotes/app.yaml
+/c/moments-web/quotes/golden_present.py
+
+*2010.09.19 15:32:18 quotes
+/c/moments-web/instances.txt
+/c/moments-web/launch.sh
+
+*2010.09.16 10:24:48 todo
+/c/moments-web/instances.txt
+/c/moments-web/launch.sh
+/c/scripts/new-application.py
+/c/technical/python/google_app_engine/setup.txt
+/c/moments-web/journal.txt
+/c/moments-web/todo.txt
+
+*2010.09.16 10:13:10 todo
+/c/moments-web/instances.txt
+/c/moments-web/launch.sh
+/c/moments-web/journal.txt
+/c/moments-web/todo.txt
+
+*2010.07.18 17:56:58 app
+/c/sites/moments-web/instances.txt
+/c/sites/moments-web/app/config.py
+/c/sites/moments-web/app/main.py
+/c/sites/moments-web/app/app.yaml
+
+*2010.07.18 18:04:29 tipfy
+/c/sites/moments-web/instances.txt
+/c/sites/moments-web/app/distlib/tipfy/__init__.py
+
+*2010.07.16 11:46:31 tipfy
+/c/sites/moments-web/instances.txt
+/c/sites/moments-web/project/app/distlib/tipfy/ext/db.py
+/c/sites/moments-web/project/app/main.py
+/c/sites/moments-web/project/app/distlib/tipfy/__init__.py
+/c/sites/moments-web/project/app/config.py
+/c/sites/moments-web/project/app/app.yaml
+
+*2010.07.11 22:24:55 project
+/c/sites/moments-web/instances.txt
+/c/sites/moments-web/project/app/config.py
+/c/sites/moments-web/project/app/main.py
+/c/sites/moments-web/project/app/app.yaml
+
+*2010.07.11 22:05:25 project
+/c/sites/moments-web/instances.txt
+/c/sites/moments-web/project/README.txt
+
+*2010.07.09 10:12:09 todo
+/c/sites/moments-web/instances.txt
+/c/sites/moments-web/launch.sh
+/c/sites/moments-web/journal.txt
+/c/sites/moments-web/todo.txt
+
+
