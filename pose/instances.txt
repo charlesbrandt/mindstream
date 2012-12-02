@@ -1,3 +1,21 @@
+*2012.12.01 12:37:59 views
+/c/mindstream/pose/instances.txt
+/c/mindstream/pose/templates/image_tiny.tpl
+/c/mindstream/pose/templates/image.tpl
+/c/mindstream/pose/templates/series_summary.tpl
+/c/mindstream/pose/templates/series.tpl
+/c/mindstream/pose/templates/sort.tpl
+/c/mindstream/pose/templates/directory.tpl
+/c/mindstream/pose/templates/directory_summary.tpl
+/c/mindstream/pose/templates/footer.tpl
+/c/mindstream/pose/templates/header.tpl
+/c/mindstream/pose/templates/entries.tpl
+/c/mindstream/pose/templates/navigation.tpl
+/c/mindstream/pose/css/style.css
+/c/mindstream/pose/templates/site.tpl
+/c/mindstream/pose/templates/layout.tpl
+/c/mindstream/pose/templates/home.tpl
+
 *2012.12.01 11:53:56 code
 /c/mindstream/pose/instances.txt
 /c/mindstream/pose/js/journal.js

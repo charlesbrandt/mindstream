@@ -108,15 +108,18 @@ def _move_image_and_thumbs(source, new_dir):
         os.mkdir(new_dir)
 
     path_string = str(source.path)
-    source_path = path_string.replace(' ', '\ ')
-    #source_path = source.path.replace(' ', '\ ')
-    path = Path(source_path)
-    source = path.load()
-    source_type = path.type()    
+
+    #path = Path(source_path)
+    #source = path.load()
+    source_type = source.path.type()    
     #source = make_node(source.path)
 
-    #instead, just issue system command
-    #for moving files
+    #only want to use this for subprocess
+    #do not use as a path string for Path() objects...
+    #they don't need escaping
+    source_path = path_string.replace(' ', '\ ')
+    #just issue system command for moving files
+    #(python libraries don't always work across different devices)
     command = "mv %s %s" % (source_path, new_dir)
     mv = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
     mv.wait()
@@ -128,8 +131,8 @@ def _move_image_and_thumbs(source, new_dir):
     result = "moving: %s" % source_path
     result += mv.stdout.read()
 
-    #we have already moved at this point:
-    #Try to move thumbnails if they exist
+    #We have already moved/copied the files at this point.
+    #Try to move thumbnails if they exist:
     if source_type == "Image" and os.path.exists(source.thumb_dir_path):
 
         destination = os.path.join(new_dir, source.name)
@@ -251,6 +254,13 @@ def import_media(src, dest_prefix, tags=[], adjust_time=0):
 
     ## destinations = []
     destinations = group_by_day(src, dest_prefix, tags)
+
+    print ""
+    print ""
+    print ""
+    print "All done moving and grouping files.  (OK to eject media now)"
+    print "Starting rotation and thumbnail generation..."
+    print ""
 
     ## #if something goes wrong and you need to run this again:
     ## dirs = os.listdir(dest_prefix)
