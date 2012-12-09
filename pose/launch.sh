@@ -17,4 +17,6 @@ python /c/mindstream/mindstream/launch.py -c /c/mindstream/pose todo
 
 echo "#so script can find templates relative to script:"
 echo "cd /c/mindstream/pose"
-echo "python application-split.py -c /c/journal"
+echo "python application.py -c /c/journal
+
+http://localhost:8088/"

@@ -97,8 +97,9 @@ $(document).ready(function(){
   %if p.type() == "Directory":
     %try:
     %include directory_summary_simple path=p, admin=True
+    <p style="clear:both"></p>
     %except:
-    % pass
+    %pass
     %end
   %else:
     %include series_summary path=p

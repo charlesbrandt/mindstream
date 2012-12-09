@@ -46,10 +46,10 @@
 </div>
 
 <span class="image" style="float:left"> 
-      <a href="/path/{{ path }}">
+      <a href="/path/{{ path.to_relative() }}">
 	%image = path.load()
 	%image_path = image.size_path("medium")
-	<img src="/image/{{image_path.to_relative()}}" width=800>
+	<img src="/image/{{image_path.to_relative()}}" width=500>
       </a><br>
 </span>
 

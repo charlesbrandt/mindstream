@@ -28,7 +28,7 @@ import bottle
 bottle.debug(True)
 
 server_root = os.path.dirname(os.path.realpath(__file__))
-print server_root
+#print "Server root: %s" % server_root
 
 #default is "./views/" directory
 template_path = os.path.join(server_root, 'templates')
@@ -62,7 +62,7 @@ server = bottle.Bottle()
 
 
 # GLOBALS:
-#this is equivalent to main() function in template_script-2.py
+#this is equivalent to main() function in template_script.py
 
 #requires that at least one argument is passed in to the script itself
 #(through sys.argv)
@@ -97,10 +97,12 @@ if len(sys.argv) > 1:
 
 if len(sys.argv) > 1:
     look_in = sys.argv[1]
-    print look_in
+    print "Look in: %s" % look_in
 else:
     look_in = 'http://localhost:8000'
 
+
+print "Path root: %s" % path_root
 
 #should be able to call these directly if desired
 @server.route('/search/data/:key')
@@ -555,7 +557,12 @@ def launch_path(source=''):
 @server.route('/image/:relative#.+#')
 def image(relative=''):
     global path_root
-    path = Path(path_root + relative, relative_prefix=path_root)
+
+    #if not re.match('/', relative):
+    #    relative = os.path.join(path_root, relative)
+
+    print "SHOWING IMAGE: %s" % relative
+    path = Path(relative, relative_prefix=path_root)
     if path.type() == "Image":
         return static_file(relative, root=path_root)
     else:
@@ -804,7 +811,7 @@ def series(type="Image", relative=''):
     if re.match('~', relative):
         relative = os.path.expanduser(relative)
     if not re.match('/', relative):
-        relative = path_root + relative
+        relative = os.path.join(path_root, relative)
 
     path = Path(relative, relative_prefix=path_root)
     if path.type() != "Directory":
@@ -861,8 +868,10 @@ def path(relative=''):
     ##     relative = os.path.join('/', relative)
     ##     full = os.path.abspath(relative)
     ## print full
+
+    full_path = os.path.join(path_root, relative)
  
-    path = Path(path_root + relative, relative_prefix=path_root)
+    path = Path(full_path, relative_prefix=path_root)
     if path.type() == "Directory":
         node = path.load()
         #will depend what we want to sort by here:

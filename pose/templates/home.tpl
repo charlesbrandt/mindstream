@@ -1,5 +1,7 @@
 <h1>Server Path Root:</h1>
 <p>{{ path_root }}</p>
+<p>(set this with the -c option for server<br>
+e.g. python application.py -c /media/Data)</p>
 
 <h1>Moments</h1>
 <p>To browse a journal, a journal server must be loaded already.  Pose will connect to it using a RemoteJournal object.  The standard entry point is: </p>
