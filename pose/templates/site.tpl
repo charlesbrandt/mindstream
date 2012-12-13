@@ -15,11 +15,7 @@
 <body>
   %include navigation 
 
-  %#this is utilized by rebase calls
-  %#easier than passing in body from application.py
-  %include
-
-  %#{{! body }}
+  {{! body }}
 
   %include footer 
 
