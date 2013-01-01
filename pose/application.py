@@ -375,6 +375,7 @@ def ignore_cloud(name="ignores"):
     return cloud(name=name, ignore_cloud=True, preserve_order=False)
 
 @server.route('/cloud/:name#.+#')
+@server.route('/cloud/')
 def cloud(name='world', ignore_cloud=False, preserve_order=True):
     """
     ignore_cloud will toggle whethere the supplied name cloud
