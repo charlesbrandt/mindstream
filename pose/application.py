@@ -819,6 +819,7 @@ def series(type="Image", relative=''):
         parent = path.parent()
         parent_dir = parent.load()
         #parent_dir.sort_by_date()
+        parent_dir.sort_by_path()
         parent_dir.scan_filetypes()
         if path.type() == "Image":
             count = 0

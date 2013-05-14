@@ -48,7 +48,7 @@
 <span class="image" style="float:left"> 
       <a href="/path/{{ path.to_relative() }}">
 	%image = path.load()
-	%image_path = image.size_path("medium")
+	%image_path = image.size_path("medium", square=False)
 	<img src="/image/{{image_path.to_relative()}}" width=500>
       </a><br>
 </span>
@@ -56,7 +56,7 @@
 
 
 
-  <hr />
+  <hr style="clear:both"/>
 
   %include footer
 </body>
