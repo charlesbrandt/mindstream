@@ -452,9 +452,11 @@ def edit_today(context=None, instances=None, files=[], destination=None, priorit
     #incase no destintation was explicitly specified.
     if destination is None:
         if os.name == "nt":
-            destination = r"C:\c\outgoing"
+            #destination = r"C:\c\outgoing"
+            destination = r"C:\c\out"
         else:
-            destination = "/c/outgoing"
+            #destination = "/c/outgoing"
+            destination = "/c/out"
 
     if not os.path.exists(destination):
         os.makedirs(destination)
@@ -476,9 +478,11 @@ def edit_today(context=None, instances=None, files=[], destination=None, priorit
 def edit_journal(destination=None):
     if destination is None:
         if os.name == "nt":
-            destination = r"C:\c\outgoing"
+            #destination = r"C:\c\outgoing"
+            destination = r"C:\c\out"
         else:
-            destination = "/c/outgoing"
+            #destination = "/c/outgoing"
+            destination = "/c/out"
 
     if not os.path.exists(destination):
         os.makedirs(destination)
