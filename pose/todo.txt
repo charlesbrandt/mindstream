@@ -3,7 +3,9 @@ way to search entries
 (right now just do a grep -r ...)
 
 *2014.11.02 15:05:06 
-way to extract directly within
+way to extract from directly within pose
+see pending extract requests
+show trial extraction before saving results
 
 *2014.10.05 08:15:20 
 way to store the loaded data from text journals into a database of sorts
