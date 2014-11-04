@@ -1,3 +1,10 @@
+*2014.11.02 15:04:44 
+way to search entries
+(right now just do a grep -r ...)
+
+*2014.11.02 15:05:06 
+way to extract directly within
+
 *2014.10.05 08:15:20 
 way to store the loaded data from text journals into a database of sorts
 would also be nice to have a 'watch' style aspect that keeps track of when files have changed on the filesystem and then load any of those changes automatically into the database. (should persist across system reboots if possible)
