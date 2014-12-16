@@ -1,3 +1,10 @@
+*2014.12.14 18:20:13 complete
+this was started in README.txt
+anything more should be requested specifically
+requested [2012.08.23 09:57:39] documentation
+create documentation for Mindstream
+describe the different components in more detail
+
 *2012.08.25 14:50:24 
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css" />
   <link rel="stylesheet" href="" media="print" type="text/css" />
