@@ -1,3 +1,19 @@
+*2014.12.18 11:20:02 
+jump up to a simple script to help with this task
+
+pose + journal server adds too many levels of abstraction for right now (they're useful later)
+
+create the summary while loading the Journal...
+can load many Journal objects while walking a path.
+
+Should also do a scan of binary data location (looking for photos)
+
+similar process to loading a journal server:
+python /c/moments/moments/server.py /list/of/repositories
+
+might want to note what journal directories are included with summary
+
+
 *2011.01.17 22:14:36 summary object summarize
 a way to automatically summarize a day...
 tag cloud for the day, but base it on time?

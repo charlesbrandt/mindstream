@@ -5,6 +5,8 @@
 python /c/mindstream/mindstream/launch.py -c /c/mindstream todo
 
 echo "See also:
+python /c/mindstream/mindstream/launch.py -c /c/mindstream code
+
 python /c/mindstream/mindstream/launch.py -c /c/mindstream tagger
 
 cd pose

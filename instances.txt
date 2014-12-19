@@ -1,3 +1,7 @@
+*2014.12.18 11:09:02 code
+/c/mindstream/instances.txt
+/c/mindstream/launch.sh
+
 *2012.09.02 07:01:19 templates web css
 /c/mindstream/instances.txt
 /c/mindstream/journal.txt

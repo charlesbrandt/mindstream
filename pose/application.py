@@ -53,7 +53,7 @@ from moments.timestamp import Timerange
 
 from moments.journal import RemoteJournal
 
-from cloud import Cloud
+from mindstream.cloud import Cloud
 #from moments.mindstream import Mindstream
 from mindstream.launch import edit, file_browse
 
@@ -344,6 +344,13 @@ def range(start=None, end=None):
 def clouds():
     """
     look up all available clouds and provide links to them
+
+    this is for pre-defined clouds stored in a file
+
+    and not really clouds as much as ordered tag lists?
+    closer to a medley.collection.cluster object?
+
+    clouds imply weighted sizes for tags
     """
     global path_root
 
@@ -376,6 +383,7 @@ def ignore_cloud(name="ignores"):
 
 @server.route('/cloud/:name#.+#')
 @server.route('/cloud/')
+@server.route('/cloud')
 def cloud(name='world', ignore_cloud=False, preserve_order=True):
     """
     ignore_cloud will toggle whethere the supplied name cloud
@@ -898,4 +906,7 @@ def index():
 #port = 8088
 #start the server loop
 #run(host='localhost', port=8088)
-run(app=server, host='localhost', port=port)
+#run(app=server, host='localhost', port=port)
+#reloader=True enables Auto Reloading
+#run(host=configs['host'], port=configs['port'], reloader=True)
+run(app=server, host='localhost', port=port, reloader=True)
