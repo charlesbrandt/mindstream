@@ -10,6 +10,8 @@ collecting notes about making summaries here
 
 import sys, os, copy
 
+from moments.timestamp import Timestamp, Timerange
+
 from medley.helpers import load_json, save_json
 
 class JsonStorable(object):
@@ -27,16 +29,28 @@ class JsonStorable(object):
         """
         simplified version of creating a simple dict object
         """
-        temp_d = copy.copy(self.__dict__)
+        snapshot = copy.copy(self.__dict__)
 
-        #make sure to ignore loaded/scanned contents on a save
-        temp_d.pop("contents", None)
+        #this should only be applied during a load:
+        snapshot.pop("parent", None)
 
-        if temp_d.has_key('debug'):
+        snapshot.pop("updated", None)
+        snapshot['updated'] = self.updated.compact()
+        
+        #want to convert all of these before saving:
+        snapshot.pop("contents", None)
+
+        contents = []
+        for item in self.contents:
+            contents.append(item.to_dict())
+            
+        snapshot['contents'] = contents
+        
+        if snapshot.has_key('debug'):
             #this is only used locally
-            temp_d.pop("debug", None)
+            snapshot.pop("debug", None)
 
-        return temp_d
+        return snapshot
 
     def as_json(self):
         """
@@ -57,11 +71,31 @@ class JsonStorable(object):
         #print "Saving: %s to %s" % (temp_d, destination)
         save_json(destination, temp_d)
         
-    def load(self, source, debug=False):
-        result = load_json(source)
+    def load(self, source=None, result=None, debug=False):
+        if source:
+            result = load_json(source)
+            if self.debug:
+                print "Loaded: %s" % result
+
+        #either way, something should be loaded now
+        if not isinstance(result, dict):
+            #print "%s" % result
+            print ""
+            print result
+            print self.json_source
+            raise ValueError, "Unknown data type: %s" % type(result)
+
+
+        if result.has_key('contents'):
+            for item in result['contents']:
+                #TODO:
+                #will need to make this more generic
+                #or redefine in subclasses:
+                child = TimeSummary(result=item)
+                self.add_summary(child)
+
+            del result['contents']
         
-        if self.debug:
-            print "Loaded: %s" % result
         self.__dict__.update(result)
     
 
@@ -180,26 +214,78 @@ class Summary(JsonStorable):
         #e.g. # of entries, # of bytes, length of time, etc
         self.size = 0
 
+        self.parent = ''
+        
         #custom / manually created notes
         #self.details = ''
         #this might fit in highlights
         
-        #this is different than contents
+        #aka 'includes'
+        #if there is a path associated with the Node
+        #self.path = ''
+        #might need a list of different sources included
+        #source may be paths, may not be
+        self.sources = []
+
+        #anything specific to this node
+        #might make sense to make this a JSON encoded string
+        #for application specific structures
+        #self.notes = ''
+        #sometimes use this instead (Content)
+        #self.history = ''
+
+
+        #it may make sense to store highlights separately
+        #plus anything else that can be edited manually
+        #this would make it easier to regenerate
+        #and also keep multiple copies using different sources
+
+        #this is different than self.contents
         #in that it can contain anything from below...
         #not just immediate children
         #might not need a default either...
         #just take as many as your layout can handle
         #these should all be manually specified?
         #similar to photos, but more generic
+
+        #if item in highlights is just a string, treat it as text
+        #otherwise it should be a list (or tuple) with a length of 2
+        #in the format:
+        #('item_type', 'item_path_or_identifier')
+        #where item types could be:
+        #Moment, File, Photo, Content, Playlist, Person, etc
         self.highlights = []
+        #what about some kind of linking mechanism?
+        #especially thinking for text based descriptions
+        #would be nice to be able to link to those from higher nodes
+        #but don't want to duplicate...
+        #maybe link to the summary itself?
 
-        #anything specific to this node
-        #might make sense to make this a JSON encoded string
-        #for application specific structures
-        self.notes = ''
-        #sometimes use this instead (Content)
-        #self.history = ''
+        #may also want to include anything that was ignored:
+        #maybe just keep track of things that are requested to be ignores...
+        #they can then be applied when viewing
+        #manually edited field
+        self.ignores = []
 
+
+
+
+
+    def add_summary(self, summary):
+        """
+        helper for setting the parent
+        and any other updates that need to happen
+        """
+        summary.parent = self
+        if not summary in self.contents:
+            self.contents.append(summary)
+        
+        
+#not quite sure yet about the following items...
+#brainstorming...
+#many different applications
+#trying to keep it flexible
+#and yet not bloated
 
 
 #maybe there are 2 types of Summary objects...
@@ -212,16 +298,11 @@ class TimeSummary(Summary):
     def __init__(self):
         """
         """
+        Summary.__init__(self)
 
         #a compact string representation, if the summary covers a range of time
-        self.timerange = ''
-
-
-        #not quite sure yet about the following items...
-        #brainstorming...
-        #many different applications
-        #trying to keep it flexible
-        #and yet not bloated
+        #if not set, can use default range for name
+        #self.timerange = ''
 
         #for rendering, might want different summaries to show up differently
         #self.layout = ''
@@ -230,6 +311,58 @@ class TimeSummary(Summary):
         #similar to layout, notes about rendering for different scales?
         #min_size, max_size... brings to mind areaui concepts
         #self.scale
+
+        #tag_cloud? cloud?
+        self.cloud = {}
+        #not sure if this is universal enough
+        #clouds are a type of summary of their own
+        #but it would be nice to be able to regenerate them
+        #without a complete re-scan
+
+        #similar to People.photos
+        #will want to associate tags, so just a list of paths is not sufficient
+        #use SimpleContent... no tree structure there
+        #also much overlap with moments.path.Image object
+        self.photos = []
+        #self.default_photo = ''
+        #is something more generic, like 'highlights', sufficient?
+        #maybe don't want to add all (or any) photos to highlights
+
+    def add_summary(self, summary):
+        """
+        """
+        
+        summary.parent = self
+        if summary in self.contents:
+            #it must already be in there, but maybe it has been updated
+            #will need to undo the values from the old one before applying new
+            #
+            #but if it's the same value, it will have already been updated
+            #this means we would need to keep the original around
+            #maybe reloading all summary objects is easier
+            #than applying change up stream
+            pass
+
+        #now we should merge in cloud data and photo data
+        #also update size accordingly
+        self.size += summary.size
+
+        for tag in summary.cloud.keys():
+            if self.cloud.has_key(tag):
+                self.cloud[tag] += summary.cloud[tag]
+            else:
+                self.cloud[tag] = summary.cloud[tag]
+
+        self.contents.append(summary)
+
+
+
+
+class DataSummary(Summary):
+    def __init__(self):
+        """
+        """
+        Summary.__init__(self)
 
         #maybe keep bytes separate... that is more of a fixed unit
         #and most digital representations still vary here:
@@ -241,31 +374,15 @@ class TimeSummary(Summary):
         #which might make Content objects more suitable:
         #self.hash = ''
 
-        #aka 'includes'
-        #if there is a path associated with the Node
-        #self.path = ''
-        #might need a list of different sources included
-        #source may be paths, may not be
-        self.sources = []
         
-        #tag_cloud? cloud?
-        self.cloud = {}
-        #not sure if this is universal enough
-        #clouds are a type of summary of their own
-        #but it would be nice to be able to regenerate them
-        #without a complete re-scan
+class SpaceSummary(Summary):
+    def __init__(self):
+        """
+        even more similar to AreaUI
+        """
+        Summary.__init__(self)
 
-        #may also want to include anything that was ignored:
-        self.ignores = {}
-
-
-        #similar to People.photos
-        #will want to associate tags, so just a list of paths is not sufficient
-        #use SimpleContent... no tree structure there
-        #also much overlap with moments.path.Image object
-        self.photos = []
-        #self.default_photo = ''
-        #is something more generic, like 'highlights', sufficient?
+        #
 
         
 def usage():
