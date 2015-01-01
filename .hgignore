@@ -15,3 +15,4 @@ syntax: glob
 # switch to regexp syntax.
 syntax: regexp
 ^mindstream.egg-info
+root.json

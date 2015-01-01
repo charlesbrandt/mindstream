@@ -11,6 +11,26 @@ show trial extraction before saving results
 way to store the loaded data from text journals into a database of sorts
 would also be nice to have a 'watch' style aspect that keeps track of when files have changed on the filesystem and then load any of those changes automatically into the database. (should persist across system reboots if possible)
 
+*2014.08.02 05:54:59 journal todo
+re-requesting a simple way to search notes
+rather than defaulting to a google search
+see if local notes have the answer first
+
+*2015.01.01 08:27:56 
+consider different layers of security or use case profiles:
+
+private/offline
+
+private/home
+private/mobile  private/on server
+
+public
+
+then use those profiles to determine what should be synchronized on local machine. 
+
+
+way to look at multiple indexes, depending on what is available (or could just duplicate higher levels down to lower ones (up to a point))
+
 *2012.08.23 09:49:54 
 would be nice to have editing capabilities built in to pose "/tagged/[tag]" listing
 this would make it easier to edit/update entry data
