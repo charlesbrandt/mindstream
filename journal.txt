@@ -1,3 +1,22 @@
+*2015.01.12 10:51:12 word_clouds
+d3 tag cloud - Google Search
+https://www.google.com/search?q=d3+tag+cloud&oq=d3+tag+cloud&aqs=chrome..69i57.2647j0j1&sourceid=chrome&es_sm=91&ie=UTF-8
+jasondavies/d3-cloud · GitHub
+https://github.com/jasondavies/d3-cloud
+Word Cloud Generator
+http://www.jasondavies.com/wordcloud/#%2F%2Fwww.jasondavies.com%2Fwordtree%2Fcat-in-the-hat.txt
+How the Word Cloud Generator Works
+http://www.jasondavies.com/wordcloud/about/
+Word clouds considered harmful » Nieman Journalism Lab
+http://www.niemanlab.org/2011/10/word-clouds-considered-harmful/
+Mapping a Deadly Day in Baghdad - Iraq War Logs - WikiLeaks Documents - Interactive Feature - NYTimes.com
+http://www.nytimes.com/interactive/2010/10/24/world/1024-surge-graphic.html?_r=0
+Words Used in 40 Commencement Speeches - Class of 2011 - Interactive Feature - NYTimes.com
+http://www.nytimes.com/interactive/2011/06/10/education/commencement-speeches-graphic.html
+Wordle - Beautiful Word Clouds
+http://www.wordle.net/
+
+
 *2014.12.14 18:20:13 complete
 this was started in README.txt
 anything more should be requested specifically
