@@ -47,6 +47,42 @@ from moments.journal import Journal
 #http://docs.python.org/library/optparse.html?highlight=optparse#module-optparse
 from optparse import OptionParser
 
+def simple_launcher(command):
+    """
+    more of an example / template for other scripts to use
+    often look here to remember how subprocess works
+    building a command is left to the caller (example commented out)
+    """
+    ## arg_string = ''
+    ## for wd in working_dirs:
+    ##     arg_string += ' --tab --working-directory=%s' % wd
+    ## for i in range(tabs):
+    ##     args += ' --tab'
+
+    #command = "gnome-terminal %s &" % args
+
+    
+    process = subprocess.Popen(command, shell=True,
+                               stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE)
+
+    #varying degrees of success with these
+    #process.communicate()[0]
+    #process.communicate()
+    #process.wait()
+
+    while process.poll() is None:
+        #depending on which channel has output, can tailor that here
+        l = process.stderr.readline()
+        #l = process.stdout.readline()
+        print l
+
+    #when process terminates, can finish printing the rest:
+    print process.stdout.read()
+        
+    return command + "\n"
+    
+
 ############################################################
 # generic launchers
 ############################################################
