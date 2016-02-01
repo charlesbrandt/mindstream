@@ -2,12 +2,13 @@
 # This is an example launch script. 
 # It should be easy to tailor this to various workspaces.
 
-python /c/mindstream/mindstream/launch.py -c /c/mindstream todo
+export ROOT=/c/public/mindstream
+launch.py -c $ROOT todo
 
 echo "See also:
-python /c/mindstream/mindstream/launch.py -c /c/mindstream code
+launch.py -c $ROOT code
 
-python /c/mindstream/mindstream/launch.py -c /c/mindstream tagger
+launch.py -c $ROOT tagger
 
 cd pose
 ./launch.sh
