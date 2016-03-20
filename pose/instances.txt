@@ -1,3 +1,29 @@
+*2016.03.20 06:31:24 code
+/c/public/mindstream/pose/instances.txt
+/c/public/mindstream/pose/js/journal.js
+/c/public/mindstream/pose/cloud.py
+/c/public/mindstream/pose/application.py
+
+*2016.03.20 06:31:42 views
+/c/public/mindstream/pose/instances.txt
+/c/public/mindstream/pose/templates/image_tiny.tpl
+/c/public/mindstream/pose/templates/image.tpl
+/c/public/mindstream/pose/templates/series_summary.tpl
+/c/public/mindstream/pose/templates/series.tpl
+/c/public/mindstream/pose/templates/sort.tpl
+/c/public/mindstream/pose/templates/directory.tpl
+/c/public/mindstream/pose/templates/directory_summary.tpl
+/c/public/mindstream/pose/templates/footer.tpl
+/c/public/mindstream/pose/templates/header.tpl
+/c/public/mindstream/pose/templates/entries.tpl
+/c/public/mindstream/pose/templates/navigation.tpl
+/c/public/mindstream/pose/css/style.css
+/c/public/mindstream/pose/templates/site.tpl
+/c/public/mindstream/pose/templates/layout.tpl
+/c/public/mindstream/pose/templates/home.tpl
+
+
+
 *2012.12.01 12:37:59 views
 /c/mindstream/pose/instances.txt
 /c/mindstream/pose/templates/image_tiny.tpl

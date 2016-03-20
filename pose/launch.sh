@@ -2,13 +2,13 @@
 # This is an example launch script. 
 # It should be easy to tailor this to various workspaces.
 
-python /c/mindstream/mindstream/launch.py -c /c/mindstream/pose code
-python /c/mindstream/mindstream/launch.py -c /c/mindstream/pose views
+launch.py -c /c/public/mindstream/pose code
+launch.py -c /c/public/mindstream/pose views
 
 echo "other common options:
-python /c/mindstream/mindstream/launch.py -c /c/technical javascript
+launch.py -c /c/technical javascript
 
-python /c/mindstream/mindstream/launch.py -c /c/mindstream/pose todo
+launch.py -c /c/public/mindstream/pose todo
 "
 
 #echo "python /c/moments/moments/server.py /c/journal" 
