@@ -16,7 +16,14 @@ launch.py -c /c/public/mindstream/pose todo
 #echo "python /c/mindstream/pose/application-split.py -c /c/journal"
 
 echo "#so script can find templates relative to script:"
-echo "cd /c/mindstream/pose"
-echo "python application.py -c /c/journal
+#echo "cd /c/mindstream/pose"
 
-http://localhost:8088/"
+
+echo "
+#new tab:
+cd /c/public/sortable_list/web
+python application.py -c /c/journal
+
+#new browser
+http://localhost:8088/
+"
