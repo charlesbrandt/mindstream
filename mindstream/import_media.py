@@ -194,6 +194,29 @@ def process_batch(batch, last_date, dest_prefix, tags):
 
     return dest
 
+def check_dates(sources):
+    """
+    go through all sources and look for the days covered
+    this is useful to check for media from 
+    devices that don't keep an accurate clock
+
+    related to group_by_day, but not processing any batches here
+    """
+    dates = []
+    for source in sources:
+        p = Path(source)
+        d = p.load()
+        d.sort_by_date()
+
+        for fpath in d.files:
+            #print f.name
+            f = fpath.load()
+            if not f.date() in dates:
+                dates.append(f.date())
+
+    return dates
+        
+
 def group_by_day(path, dest_prefix=None, tags=[]):
     """
     look at a directory, and group all files by the day they were created
@@ -235,34 +258,73 @@ def group_by_day(path, dest_prefix=None, tags=[]):
     #get the last one:
     if cur_batch:
         dest = process_batch(cur_batch, last_date, dest_prefix, tags)
-        destinations.append(dest)
+        if not dest in destinations:
+            destinations.append( dest )
 
     #if we need to do something else to the new directories
     #we have them all collected in destinations list
 
     return destinations
 
-def import_media(src, dest_prefix, tags=[], adjust_time=0):
+def import_media(sources, dest_prefix, tags=[], adjust_time=0, forced_date=None):
     """
     use group_by_day to move everything from the source into the destination
     grouped into destination directories by the day they were created
 
     then go through everything and process any images
     rotating them and generating thumbnails.
+
+    forced_dates will over-ride group_by_day and use forced_date instead
     """
     start = Timestamp()
 
-    ## destinations = []
-    destinations = group_by_day(src, dest_prefix, tags)
+    destinations = []
+    for src in sources:
+
+        if forced_date:
+            #just need to add all files from src to a cur_batch list
+            #(i.e. very simplified version of group_by_day()
+            cur_batch = []
+            if dest_prefix is None:
+                dest_prefix = src
+            p = Path(src)
+            d = p.load()
+            d.sort_by_date()
+            #print "%s Files found in %s" % (len(d.files), src)
+            for fpath in d.files:
+                f = fpath.load()
+                cur_batch.append(f)
+
+            if cur_batch:
+                dest = process_batch(cur_batch, forced_date, dest_prefix, tags)
+                if not dest in destinations:
+                    destinations.append( dest )
+
+        else:
+            ## destinations = []
+            new_destinations = group_by_day(src, dest_prefix, tags)
+            destinations.extend(new_destinations)
 
     print ""
     print ""
     print ""
-    print "All done moving and grouping files.  (OK to eject media now)"
+    #if there are multiple calls to import_media for different directories
+    #this may not be the case:
+    finish_move = Timestamp()
+    print "%s: All done moving and grouping files for:" % finish_move
+    print sources
+    print "If that's everything, it's OK to eject media now"
+    print ""
     print "Starting rotation and thumbnail generation..."
     print ""
+    
+    ## if something goes wrong and you need to run this again:
+    print "Destinations: (just in case)"
+    print destinations
+    print ""
 
-    ## #if something goes wrong and you need to run this again:
+    #it may be possible to generate destinations a different way too:
+    
     ## dirs = os.listdir(dest_prefix)
     ## if '.DS_Store' in dirs:
     ##     dirs.remove('.DS_Store')
