@@ -53,9 +53,10 @@ from moments.timestamp import Timerange
 
 from moments.journal import RemoteJournal
 
+from moments.launch import edit, file_browse
+
 from mindstream.cloud import Cloud
 #from moments.mindstream import Mindstream
-from mindstream.launch import edit, file_browse
 
 
 server = bottle.Bottle()
@@ -565,6 +566,9 @@ def launch_path(source=''):
 
 @server.route('/image/:relative#.+#')
 def image(relative=''):
+    """
+    this is redundant with path
+    """
     global path_root
 
     #if not re.match('/', relative):
