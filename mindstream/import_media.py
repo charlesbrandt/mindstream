@@ -376,7 +376,9 @@ def main():
             usage()
         src = sys.argv[1]
         dest_prefix = sys.argv[2]
-        result = import_media(src, dest_prefix)
+        tag_str = sys.argv[3]
+        tags = tag_str.split(' ')
+        result = import_media([src,], dest_prefix, tags)
         print result
         
 if __name__ == '__main__':
