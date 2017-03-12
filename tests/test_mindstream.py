@@ -1,10 +1,12 @@
+from __future__ import print_function
+from builtins import object
 import sys, os
 sys.path.append(os.path.dirname(os.getcwd()))
 #print sys.path
 
 from datetime import datetime
 
-class TestMindstream:
+class TestMindstream(object):
     def setUp(self):
         """
         setup up any state specific to the execution
@@ -18,13 +20,13 @@ class TestMindstream:
     def test_union(self):
         tags = [ 'foo', 'bar' ]
         entries = self.j.union_tags(tags)
-        print "%s entries found from union" % len(entries)
+        print("%s entries found from union" % len(entries))
         assert len(entries) == 3
 
     def test_intersect(self):
         tags = [ 'foo', 'bar' ]
         entries = self.j.intersect_tags(tags)
-        print "%s entries found from intersect" % len(entries)
+        print("%s entries found from intersect" % len(entries))
         assert len(entries) == 2
 
     def test_newest_entries_from_file(self):
@@ -32,7 +34,7 @@ class TestMindstream:
         others = self.j.difference(k)
         assert len(others) == 1
 
-        print others[0]
-        print others[0].data
+        print(others[0])
+        print(others[0].data)
         assert others[0].data == "test entry\n\n"
 

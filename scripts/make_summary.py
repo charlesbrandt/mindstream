@@ -13,6 +13,9 @@
 initially adapted from moments.server code
 
 """
+from __future__ import print_function
+from builtins import str
+from builtins import range
 
 import os, sys, codecs, re
 
@@ -26,7 +29,7 @@ from mindstream.summary import Summary, TimeSummary
 j = Journal()
 
 def usage():
-    print __doc__
+    print(__doc__)
     
 def load_journal_helper(item):
     """
@@ -57,7 +60,7 @@ def find_photos(cur_summary, cur_year, photo_roots, ignores=[]):
             if re.match(d_compact, option) and not ignore:
                 #find all photos in dir:
                 option_path = os.path.join(year_path, option)
-                print "looking in: %s" % option_path
+                print("looking in: %s" % option_path)
                 #very similar to content.Content.find_media()
                 #but this is only checking one level down
                 #I don't think we want to walk here:
@@ -69,7 +72,7 @@ def find_photos(cur_summary, cur_year, photo_roots, ignores=[]):
                     #if debug:
                     #    print "looking at: %s" % media
                     if mpath.type() == kind:
-                        print "matched!", media
+                        print("matched!", media)
                         if not media in cur_summary.photos:
                             cur_summary.photos.append(media)
     
@@ -95,8 +98,8 @@ if __name__ == '__main__':
             #this is the local load_journal function
             #not to be confused with moments.path.load_journal function
             load_journal_helper(s)
-            print "Loaded: %s entries" % len(j.entries())
-            print "Load finished: %s" % Timestamp()
+            print("Loaded: %s entries" % len(j.entries()))
+            print("Load finished: %s" % Timestamp())
 
 
         #now find out what years we have in the journal
@@ -131,7 +134,7 @@ if __name__ == '__main__':
         year_j.update_many(entries)
         for month in range(1, 13):
             m_compact = "%s%02d" % (cur_year, month)
-            print "Month: %s" % m_compact
+            print("Month: %s" % m_compact)
             month_range = Timerange(m_compact)
             m_entries = year_j.range(month_range.start, month_range.end)
             month_j = Journal()
@@ -142,7 +145,7 @@ if __name__ == '__main__':
 
             for day in range(month_range.start.day, month_range.end.day+1):
                 d_compact = "%s%02d%02d" % (cur_year, month, day)
-                print "Day: %s" % d_compact
+                print("Day: %s" % d_compact)
                 day_range = Timerange(d_compact)
                 d_entries = year_j.range(day_range.start, day_range.end)
                 day_j = Journal()
@@ -166,7 +169,7 @@ if __name__ == '__main__':
             year_summary.add_summary(month_summary)
 
         root_summary.add_summary(year_summary)
-        print year_summary.to_dict()
+        print(year_summary.to_dict())
         
         #Many different ways to create and store Summary objects
         #could make separate files in a filesystem if that would be helpful

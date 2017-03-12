@@ -16,6 +16,10 @@ this should make it easy to remove blocks that are clearly not related to the pr
 should then be able to take that edited output and compress it further into blocks... could group by day, by week, etc. (depending on reporting requirements)
 
 """
+from __future__ import print_function
+from __future__ import division
+from builtins import str
+from past.utils import old_div
 import sys, os
 
 from moments.path import load_journal, Path
@@ -31,7 +35,7 @@ def log_minutes(j, destination=None):
     for e in j:
         if last_stamp:
             delta = e.created.dt - last_stamp.dt
-            minutes = (delta.seconds / 60) + (delta.days * 24 * 60)
+            minutes = (old_div(delta.seconds, 60)) + (delta.days * 24 * 60)
             e.data = "%s minutes (%s - %s)" % (minutes, last_stamp, e.created)
         last_stamp = e.created
 
@@ -50,8 +54,8 @@ def format_minutes(j, skip=8):
     total_minutes = 0
     for e in j:
         if not e.created:
-            print "->%s<-" % e.created
-            print e.render()
+            print("->%s<-" % e.created)
+            print(e.render())
         else:
             if e.created.year != cur_year:
                 cur_year = e.created.year
@@ -61,21 +65,21 @@ def format_minutes(j, skip=8):
                 #print "  %s" % cur_month
             if e.created.day != cur_day:
                 cur_day = e.created.day
-                print e.created.text(accuracy="day")
+                print(e.created.text(accuracy="day"))
 
             if last_stamp:
                 delta = e.created.dt - last_stamp.dt
-                minutes = (delta.seconds / 60) + (delta.days * 24 * 60)
+                minutes = (old_div(delta.seconds, 60)) + (delta.days * 24 * 60)
                 if not minutes > skip*60:
                     total_minutes += minutes
-                    print "%s minutes (%s - %s)" % (minutes, last_stamp, e.created)
+                    print("%s minutes (%s - %s)" % (minutes, last_stamp, e.created))
                 else:
-                    print "skipping: %s" % (minutes)
+                    print("skipping: %s" % (minutes))
 
             last_stamp = e.created
 
-    hours = total_minutes / 60.0
-    print "Total: %s minutes (%s hours)" % (total_minutes, hours)
+    hours = old_div(total_minutes, 60.0)
+    print("Total: %s minutes (%s hours)" % (total_minutes, hours))
 
 
 def create_summary(source, destination):
@@ -95,7 +99,7 @@ def create_summary(source, destination):
     format_minutes(j2)
     
 def usage():
-    print __doc__
+    print(__doc__)
     
 def main():
     if len(sys.argv) > 1:
@@ -115,9 +119,9 @@ def main():
             f2 = os.path.join(str(f1_dir), "summary.txt")
             f2_path = Path(f2)
             if not f2_path.exists():
-                print "Saving output to: %s" % f2
+                print("Saving output to: %s" % f2)
             else:
-                print "Warning: %s exists!" % f2
+                print("Warning: %s exists!" % f2)
                 exit()
 
         create_summary(f1, f2)

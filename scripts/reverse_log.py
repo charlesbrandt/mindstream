@@ -12,6 +12,7 @@
 
 # Requires: moments
 """
+from __future__ import print_function
 
 import sys, os
 from moments.journal import Journal
@@ -40,7 +41,7 @@ def main():
         else:
             f2 = "temp.txt"
         reverse_log(f1, f2)
-        print "%s reversed and saved in: %s" % (f1, f2)
+        print("%s reversed and saved in: %s" % (f1, f2))
         
 if __name__ == '__main__':
     main()

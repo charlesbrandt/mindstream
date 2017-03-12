@@ -17,6 +17,8 @@
 # originally created in Pose
 python /c/code/python/scripts/import_usb.py [source_dir] [destinatin_dir]
 """
+from __future__ import print_function
+from builtins import str
 
 import sys, os, subprocess
 
@@ -72,7 +74,7 @@ def _move_files(source_dir, new_dir):
     #    os.rename(orig, new)
 
     source_dir = source_dir.replace(' ', '\ ')
-    print source_dir
+    print(source_dir)
 
     #instead, just issue system command
     #for moving files
@@ -144,7 +146,7 @@ def _move_image_and_thumbs(source, new_dir):
         #self.make_thumb_dirs(os.path.join(new_dir, self.thumb_dir_name))
         new_image.make_thumb_dirs()
 
-        for k in source.sizes.keys():
+        for k in list(source.sizes.keys()):
             #may be some files/images that do not have thumbs.  check first
             if os.path.exists(source.size_path(k)):
                 os.rename(source.size_path(k), new_image.size_path(k))
@@ -154,7 +156,7 @@ def _move_image_and_thumbs(source, new_dir):
 
     #move any items in action.txt that are associated with the file
     if os.path.exists(os.path.join(os.path.dirname(str(source.path)), 'action.txt')):
-        print "don't forget to move items in action.txt!! :)"
+        print("don't forget to move items in action.txt!! :)")
         
     return result
 
@@ -179,7 +181,7 @@ def process_batch(batch, last_date, dest_prefix, tags):
     for e in entries:
         for t in e.tags:
             if not t in photo_tags and not t in tags_copy:
-                print "Adding tag: %s" % t
+                print("Adding tag: %s" % t)
                 tags_copy.append(t)
 
     t = Tags(tags_copy)
@@ -189,7 +191,7 @@ def process_batch(batch, last_date, dest_prefix, tags):
 
     for item in batch:
         #print _move_file(item, dest)
-        print _move_image_and_thumbs(item, dest)
+        print(_move_image_and_thumbs(item, dest))
         #print item.date()
 
     return dest
@@ -239,13 +241,13 @@ def group_by_day(path, dest_prefix=None, tags=[]):
 
     last_date = None
     cur_batch = []
-    print "%s Files found in %s" % (len(d.files), path)
+    print("%s Files found in %s" % (len(d.files), path))
     for fpath in d.files:
         #print f.name
         f = fpath.load()
         if f.date() != last_date:
             #check if we need to move the previous day's files:
-            print "New day: %s (previously: %s)" % (f.date(), last_date)
+            print("New day: %s (previously: %s)" % (f.date(), last_date))
             if cur_batch:
                 dest = process_batch(cur_batch, last_date, dest_prefix, tags)
                 destinations.append(dest)
@@ -305,23 +307,23 @@ def import_media(sources, dest_prefix, tags=[], adjust_time=0, forced_date=None)
             new_destinations = group_by_day(src, dest_prefix, tags)
             destinations.extend(new_destinations)
 
-    print ""
-    print ""
-    print ""
+    print("")
+    print("")
+    print("")
     #if there are multiple calls to import_media for different directories
     #this may not be the case:
     finish_move = Timestamp()
-    print "%s: All done moving and grouping files for:" % finish_move
-    print sources
-    print "If that's everything, it's OK to eject media now"
-    print ""
-    print "Starting rotation and thumbnail generation..."
-    print ""
+    print("%s: All done moving and grouping files for:" % finish_move)
+    print(sources)
+    print("If that's everything, it's OK to eject media now")
+    print("")
+    print("Starting rotation and thumbnail generation...")
+    print("")
     
     ## if something goes wrong and you need to run this again:
-    print "Destinations: (just in case)"
-    print destinations
-    print ""
+    print("Destinations: (just in case)")
+    print(destinations)
+    print("")
 
     #it may be possible to generate destinations a different way too:
     
@@ -337,7 +339,7 @@ def import_media(sources, dest_prefix, tags=[], adjust_time=0, forced_date=None)
 
     for dest in destinations:
         #run rotate, thumbnail generation
-        print dest
+        print(dest)
         #d = make_node(dest)
         path = Path(dest)
         d = path.load()
@@ -377,7 +379,7 @@ def main():
         src = sys.argv[1]
         dest_prefix = sys.argv[2]
         result = import_media(src, dest_prefix)
-        print result
+        print(result)
         
 if __name__ == '__main__':
     main()

@@ -14,6 +14,7 @@ python /c/mindstream/scripts/github_sync.py [source_log] [target_repository] [gi
 
 target_repository should include :owner/:repo
 """
+from __future__ import print_function
 
 import sys, os, re
 import json
@@ -24,7 +25,7 @@ from moments.journal import Journal
 from moments.log import Log
 
 def usage():
-    print __doc__
+    print(__doc__)
     
 def sync_log(source, repo, token):
     """
@@ -43,9 +44,9 @@ def sync_log(source, repo, token):
 
     j = Journal()
     j.load(source)
-    print len(j.entries())
+    print(len(j.entries()))
     public = j.tag("public")
-    print len(public)
+    print(len(public))
     #for entry in public[:2]:
     for entry in public[:]:
         #check if entry already has an issues:# tag in it...
@@ -53,12 +54,12 @@ def sync_log(source, repo, token):
         added = False
         for tag in entry.tags:
             if re.search('issue', tag):
-                print "SKIPPING: ", entry.data.splitlines()[0]
-                print "item already added as: %s" % tag
+                print("SKIPPING: ", entry.data.splitlines()[0])
+                print("item already added as: %s" % tag)
                 added = True
 
         if not added:
-            print "ADDING: ", entry.data.splitlines()[0]
+            print("ADDING: ", entry.data.splitlines()[0])
 
             
             ## values = { 'title': 'test issue',
@@ -70,13 +71,13 @@ def sync_log(source, repo, token):
                        'body': '\n'.join(entry.data.splitlines()[1:]),
                        'assignee': 'charlesbrandt'
                        }
-            print values
+            print(values)
 
             r = requests.post(issues, headers=headers, auth=(token, 'x-oauth-basic'), data=json.dumps(values))
             #print r
             #print r.text
             result = r.json()
-            print result.keys()
+            print(list(result.keys()))
 
             #now add an 'issue:#' tag to the entry, so it can be associated
             issue_tag = "issue:%s" % result['number']

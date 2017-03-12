@@ -5,6 +5,8 @@ accept a month directory
 go through all logs
 and run sort_log.py on it (or equivalent function)
 """
+from __future__ import print_function
+from builtins import str
 
 import os, re, sys
 from moments.path import Path
@@ -30,14 +32,14 @@ def main():
                 if l.extension == ".txt":
                     j = Journal()
                     j.load(l)
-                    print len(j.entries())
+                    print(len(j.entries()))
 
                     out = Log(str(l))
                     out.from_entries(j.sort("chronological"))
                     out.to_file()
                     out.close()
 
-                    print l
+                    print(l)
                 else:
                     #print "No: %s" % l
                     pass

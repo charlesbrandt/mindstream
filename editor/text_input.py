@@ -20,6 +20,10 @@ around line 951:
 This pyglet based version of a simple moments editor is not as reliable, not as efficient, and not as complete as the wx based version: edit.py
 The approach is very similar in both of them.
 """
+from __future__ import print_function
+from builtins import str
+from builtins import range
+from builtins import object
 
 import os
 import pyglet
@@ -42,7 +46,7 @@ class Buffer(object):
 
     def make_words(self):
         temps = self.text.split()
-        print temps
+        print(temps)
 
     ## def previous_word(self, position):
     ##     """
@@ -124,7 +128,7 @@ class Editor(pyglet.window.Window):
 
     def resize_input(self):
         pos = self.input.content.caret.position
-        print "Pos pre: %s" % pos
+        print("Pos pre: %s" % pos)
         self.pop_handlers()
         buf = Buffer(self.input.content.text)
         self.input.unset_focus()
@@ -144,7 +148,7 @@ class Editor(pyglet.window.Window):
         self.input.set_focus()
         self.input.content.caret.visible = True
         self.input.content.caret.position = pos
-        print "Pos post: %s" % self.input.content.caret.position
+        print("Pos post: %s" % self.input.content.caret.position)
 
     def on_key_press(self, symbol, modifiers):
         #for debugging:

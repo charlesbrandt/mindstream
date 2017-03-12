@@ -9,6 +9,7 @@ remove that tag from the entry
 and save the entry to the original source
 (load source, update old entry with new one, save source)
 """
+from __future__ import print_function
 
 from moments.path import load_journal, Path
 
@@ -34,9 +35,9 @@ def clean_tag(remove_tag, journal):
                     #if we're working with date tags, and the date tag
                     #is different from the entry date, keep it around for now
                     if remove_tag != path.name:
-                        print "tag (%s) different than filename (%s) date" % (remove_tag, path.name)
+                        print("tag (%s) different than filename (%s) date" % (remove_tag, path.name))
                     else:
-                        print "REMOVING TAG: %s from: %s" % (remove_tag, e.path)
+                        print("REMOVING TAG: %s from: %s" % (remove_tag, e.path))
                         #print e.render()
                         #print e.path
 

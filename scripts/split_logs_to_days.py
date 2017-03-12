@@ -25,6 +25,9 @@ see also:
 
 $Id$ (???)
 """
+from __future__ import print_function
+from builtins import input
+from builtins import str
 
 import sys, os, subprocess, re
 from moments.journal import Journal
@@ -33,7 +36,7 @@ from moments.timestamp import Timestamp
 from moments.filters import omit_date_tags
 
 def split_log(path, add_tags, destination='/c/journal/'):
-    print path
+    print(path)
     j = Journal()
     j.load(path, add_tags=add_tags)
     if len(j.entries()):
@@ -55,26 +58,26 @@ def split_log(path, add_tags, destination='/c/journal/'):
                 #print e.render()
             else:
                 dest = os.path.join(destination, "no_date.txt")
-            print dest
+            print(dest)
 
             existing = Journal()
             if not os.path.exists(dest):
-                print "no log %s" % dest
+                print("no log %s" % dest)
                 if not os.path.exists(dest_path):
-                    print "missing directory: %s" % dest_path
+                    print("missing directory: %s" % dest_path)
                     os.makedirs(dest_path)
                 existing.save(dest)
                 
             existing.load(dest)
-            print "entries before: %s" % len(existing.entries())
+            print("entries before: %s" % len(existing.entries()))
             existing.update(e)
-            print "entries after update: %s" % len(existing.entries())
+            print("entries after update: %s" % len(existing.entries()))
             existing.sort('chronological')
             existing.save(dest)
-            print "entries after: %s" % len(existing.entries())
+            print("entries after: %s" % len(existing.entries()))
 
-        print path
-        raw_input('Ok to remove?')
+        print(path)
+        input('Ok to remove?')
         
         #get rid of the source to avoid confusion
         os.remove(path)
@@ -83,9 +86,9 @@ def split_log(path, add_tags, destination='/c/journal/'):
         #process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE,
         #                           stderr=subprocess.PIPE)
 
-        raw_input('Press Enter to continue...')
+        input('Press Enter to continue...')
 
-        print ""
+        print("")
 
 #def walk_logs(source, add_tags=["people"], subtract_tags=[],
 def walk_logs(source, destination='/c/journal/', add_tags=[], subtract_tags=[],
@@ -138,19 +141,19 @@ def walk_logs(source, destination='/c/journal/', add_tags=[], subtract_tags=[],
                         if tag in these_tags:
                             these_tags.remove(tag)
 
-                    print "add_tags: %s" % these_tags
+                    print("add_tags: %s" % these_tags)
                             
                     split_log(current_file, add_tags=these_tags, destination=destination)
 
     else:
-        print "pass in a directory"
+        print("pass in a directory")
 
 
 #walk_logs('/path/to/logs', subtract_tags=['c'])
 #walk_logs('/c/incoming', subtract_tags=['c', 'incoming'])
 #walk_logs('/c/journal/incoming')
 def usage():
-    print "split_logs_to_days.py source dest"
+    print("split_logs_to_days.py source dest")
     
 def main():
     #requires that at least one argument is passed in to the script itself (sys.argv)

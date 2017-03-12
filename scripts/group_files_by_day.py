@@ -16,6 +16,7 @@
 
 $Id$ (???)
 """
+from __future__ import print_function
 import sys
 
 #import os, subprocess
@@ -31,7 +32,7 @@ def main():
         if sys.argv[1] in ['--help','help'] or len(sys.argv) < 2:
             usage()
         f1 = sys.argv[1]
-        print f1
+        print(f1)
         group_by_day(f1)
         
 if __name__ == '__main__':
