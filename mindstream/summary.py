@@ -7,6 +7,8 @@
 # Description:
 collecting notes about making summaries here
 """
+from __future__ import print_function
+from builtins import object
 
 import sys, os, copy
 
@@ -46,7 +48,7 @@ class JsonStorable(object):
             
         snapshot['contents'] = contents
         
-        if snapshot.has_key('debug'):
+        if 'debug' in snapshot:
             #this is only used locally
             snapshot.pop("debug", None)
 
@@ -64,7 +66,7 @@ class JsonStorable(object):
         save the results
         """
         if not destination:
-            raise ValueError, "Need to know where to save: %s" % destination
+            raise ValueError("Need to know where to save: %s" % destination)
          
         temp_d = self.to_dict()
         
@@ -75,18 +77,18 @@ class JsonStorable(object):
         if source:
             result = load_json(source)
             if self.debug:
-                print "Loaded: %s" % result
+                print("Loaded: %s" % result)
 
         #either way, something should be loaded now
         if not isinstance(result, dict):
             #print "%s" % result
-            print ""
-            print result
-            print self.json_source
-            raise ValueError, "Unknown data type: %s" % type(result)
+            print("")
+            print(result)
+            print(self.json_source)
+            raise ValueError("Unknown data type: %s" % type(result))
 
 
-        if result.has_key('contents'):
+        if 'contents' in result:
             for item in result['contents']:
                 #TODO:
                 #will need to make this more generic
@@ -347,8 +349,8 @@ class TimeSummary(Summary):
         #also update size accordingly
         self.size += summary.size
 
-        for tag in summary.cloud.keys():
-            if self.cloud.has_key(tag):
+        for tag in list(summary.cloud.keys()):
+            if tag in self.cloud:
                 self.cloud[tag] += summary.cloud[tag]
             else:
                 self.cloud[tag] = summary.cloud[tag]
@@ -386,7 +388,7 @@ class SpaceSummary(Summary):
 
         
 def usage():
-    print __doc__
+    print(__doc__)
     
 def main():
     #requires that at least one argument is passed in to the script itself (sys.argv)

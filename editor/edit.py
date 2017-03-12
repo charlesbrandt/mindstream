@@ -20,6 +20,11 @@ no need to reinvent the wheel (but the editor is needed)
 *2011.11.15 04:28:11
 breathe
 """
+from __future__ import print_function
+from builtins import chr
+from builtins import str
+from builtins import range
+from builtins import object
 import os, time, re
 import wx
 
@@ -41,7 +46,7 @@ class Buffer(object):
 
     def make_words(self):
         temps = self.text.split()
-        print temps
+        print(temps)
 
     ## def previous_word(self, position):
     ##     """

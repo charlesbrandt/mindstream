@@ -1,3 +1,4 @@
+from builtins import object
 import sys, os
 
 #add parent's parent directory to path to find module if not installed
@@ -12,7 +13,7 @@ from nose.tools import *
 #import any local modules
 from summary import Summary
 
-class SummaryClass:
+class SummaryClass(object):
     def setUp(self):
         """
         setup up any state specific to the execution

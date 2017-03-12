@@ -12,6 +12,10 @@
 # Requires:
 # wx, moments
 """
+from __future__ import print_function
+from builtins import chr
+from builtins import range
+from builtins import object
 
 import wx, sys
 import  wx.lib.scrolledpanel as scrolled
@@ -96,8 +100,8 @@ def OnChar(evt):
         j = Journal()
         j.update_many(frame.items)
         j.save(frame.source)
-        print "%s of %s" % (frame.items.position, len(frame.items))
-        print "currently: %s" % (frame.items.get().created)
+        print("%s of %s" % (frame.items.position, len(frame.items)))
+        print("currently: %s" % (frame.items.get().created))
         
     elif keyname == "F":
         if frame.fullscreen:
@@ -113,7 +117,7 @@ def OnChar(evt):
     elif keynum <= 9 and keynum >= 0:
         frame.find_tag(keynum)
     else:
-        print keyname
+        print(keyname)
 
 
     #print "key event handled"
@@ -134,7 +138,7 @@ class TagTally(object):
         look for item, add one to existing entry
         otherwise create a new one with value '1'
         """
-        if self.tally.has_key(item):
+        if item in self.tally:
             self.tally[item] += 1
         else:
             self.tally[item] = 1
@@ -145,7 +149,7 @@ class TagTally(object):
         unless in tops, then give value of 1
         """
         tops = self.tops()
-        for k in self.tally.keys():
+        for k in list(self.tally.keys()):
             if k in tops:
                 self.tally[k] = 1
             else:
@@ -156,7 +160,7 @@ class TagTally(object):
         return all keys, ordered by highest tally
         """
                 
-        items = self.tally.items()
+        items = list(self.tally.items())
         swap = []
         for i in items:
             swap.append( (i[1], i[0]) )
@@ -185,7 +189,7 @@ class TagTally(object):
             self.source = source
 
         if not self.source:
-            print "need a source to save"
+            print("need a source to save")
             exit()
 
         f = open(self.source, 'w')
@@ -469,7 +473,7 @@ class MyFrame(wx.Frame):
         #print "buttons updated"
 
 def usage():
-    print "pass in the journal source you want to tag"
+    print("pass in the journal source you want to tag")
 
 if len(sys.argv) > 1:
     helps = ['--help', 'help', '-h']

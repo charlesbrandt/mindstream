@@ -16,15 +16,16 @@ renaming to sort log
 should take a sort parameter
 otherwise default to chronological (oldest first)
 """
+from __future__ import print_function
 
 import sys, os
 from moments.journal import Journal
 from moments.log import Log
 
 def usage():
-    print "python /c/mindstream/scripts/sort_log.py [source_log]"
-    print "if destination supplied, will output there instead of temp.txt"
-    print "python /c/mindstream/scripts/sort_log.py [source_log] [destination_log]"
+    print("python /c/mindstream/scripts/sort_log.py [source_log]")
+    print("if destination supplied, will output there instead of temp.txt")
+    print("python /c/mindstream/scripts/sort_log.py [source_log] [destination_log]")
     
 def sort_log(f1, output="temp.txt", sort="chronological"):
     """

@@ -31,6 +31,7 @@ this serves as an example for setting up an extraction using manager.extract_tag
 # License:  MIT
 
 """
+from __future__ import print_function
 
 from moments.filters import extract_tags, ExtractConfig
 
@@ -61,6 +62,6 @@ configs.append(c1)
 ## configs.append(cx)
 
 for c in configs:
-    print "Running extraction for: %s" % c.name
+    print("Running extraction for: %s" % c.name)
     extract_tags(c.source, c.extractions, c.ignores, save=True)
   

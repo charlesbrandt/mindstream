@@ -35,6 +35,11 @@ will still use a journal (and it's associations) to generate the cloud.
 converted to object
 standard cloud seems better than logarithmic one... something not quite right with the math in logarithmic.
 """
+from __future__ import division
+from builtins import str
+from builtins import range
+from builtins import object
+from past.utils import old_div
 import types, math
 from moments.path import check_ignore
 
@@ -89,7 +94,7 @@ class Cloud(object):
         #print ignores
         maxcount = 1
         maxkey = ''
-        for key in self.source.keys():
+        for key in list(self.source.keys()):
             ignore = check_ignore(key, self.ignores)
             if not ignore:
                 count = self.source[key]
@@ -104,7 +109,7 @@ class Cloud(object):
         """
         mincount = None
         minkey = ''
-        for key in self.source.keys():
+        for key in list(self.source.keys()):
             count = self.source[key]
             if (not minkey) or (mincount is None) or (count < mincount):
                 minkey = key
@@ -143,7 +148,7 @@ class Cloud(object):
         #minkey = self.min_key()
         (minkey, mincount) = self.min_key()
         #mincount = len(self.source[minkey])
-        distribution = ( maxcount - mincount ) / self.steps
+        distribution = old_div(( maxcount - mincount ), self.steps)
         #self.debug += "maxkey: %s, maxcount: %s, minkey: %s, mincount: %s, distribution: %s <br>\n" % (maxkey, maxcount, minkey, mincount, distribution)
         if distribution < 1:
             distribution = 1
@@ -151,7 +156,7 @@ class Cloud(object):
         if self.ordered_list:
             keys = self.ordered_list
         else:
-            keys = self.source.keys()
+            keys = list(self.source.keys())
             keys.sort()
             
         for key in keys:
@@ -173,23 +178,23 @@ class Cloud(object):
         http://www.car-chase.net/2007/jan/16/log-based-tag-clouds-python/
         """
         input = []
-        keys = self.source.keys()
+        keys = list(self.source.keys())
         keys.sort()
         for key in keys:
             input.append( (key, len(self.source[key])) )
-            if not type(input) == types.ListType or len(input) <= 0 or self.steps <= 0:  
-                raise InvalidInputException, "Please be sure steps > 0 and your input list is not empty."  
+            if not type(input) == list or len(input) <= 0 or self.steps <= 0:  
+                raise InvalidInputException("Please be sure steps > 0 and your input list is not empty.")  
             else:  
                 temp, newThresholds, results = [], [], []  
                 for item in input:  
-                    if not type(item) == types.TupleType:  
-                        raise InvalidInputException, "Be sure input list holds tuples."  
+                    if not type(item) == tuple:  
+                        raise InvalidInputException("Be sure input list holds tuples.")  
                     else:
                         temp.append(item[1])  
 
         maxWeight = float(max(temp))  
         minWeight = float(min(temp))  
-        newDelta = (maxWeight - minWeight)/float(self.steps)
+        newDelta = old_div((maxWeight - minWeight),float(self.steps))
         #self.debug += str(input)
         for i in range(self.steps + 1):  
             newThresholds.append((100 * math.log((minWeight + i * newDelta) + 2), i))  
@@ -229,7 +234,7 @@ class AssociationCloud(Cloud):
         #print ignores
         maxcount = 1
         maxkey = ''
-        for key in self.source.keys():
+        for key in list(self.source.keys()):
             ignore = check_ignore(key, self.ignores)
             if not ignore:
                 count = len(self.source[key])
@@ -250,7 +255,7 @@ class AssociationCloud(Cloud):
 
         mincount = None
         minkey = ''
-        for key in self.source.keys():
+        for key in list(self.source.keys()):
             count = len(self.source[key])
             if not minkey or count < mincount:
                 minkey = key
@@ -290,9 +295,9 @@ class AssociationCloud(Cloud):
         #minkey = self.min_key()
         (minkey, mincount) = self.min_key()
         #mincount = len(self.source[minkey])
-        distribution = ( maxcount - mincount ) / self.steps
+        distribution = old_div(( maxcount - mincount ), self.steps)
         #self.debug += "maxkey: %s, maxcount: %s, minkey: %s, mincount: %s, distribution: %s <br>\n" % (maxkey, maxcount, minkey, mincount, distribution)
-        keys = self.source.keys()
+        keys = list(self.source.keys())
         keys.sort()
         for key in keys:
             if not check_ignore(key, self.ignores):

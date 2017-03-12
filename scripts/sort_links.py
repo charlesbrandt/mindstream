@@ -21,6 +21,7 @@
 
 $Id$ (???)
 """
+from __future__ import print_function
 import sys
 from moments.journal import Journal
 from medialist.medialist import MediaList
@@ -52,7 +53,7 @@ def order_links(f1, ofile="temp.txt"):
     result += "SAVING as: %s\n" % ofile
     new_m.to_file(ofile)
         
-    print result
+    print(result)
     
 def main():
     if len (sys.argv) > 1:

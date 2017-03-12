@@ -32,6 +32,7 @@ SEE ALSO:
 /c/moments/scripts/adjust_file_times.py
 
 """
+from __future__ import print_function
 import sys#, os, subprocess
 import moments
 #from osbrowser.meta import make_node
@@ -52,7 +53,7 @@ def main():
             recurse = True
 
     if not path:
-        print "No path"
+        print("No path")
         exit()
         
     #node = make_node(path, relative=False)

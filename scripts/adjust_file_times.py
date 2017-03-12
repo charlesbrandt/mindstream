@@ -25,6 +25,7 @@ see also images_to_journal.py
 and
 import_media.py
 """
+from __future__ import print_function
 import sys, os
 from moments.node import make_node
 from moments.timestamp import Timestamp
@@ -35,7 +36,7 @@ def adjust(path):
     node_type = node.find_type()
     if node_type == "Directory":
         for d in node.directories:
-            print "Adjusting: %s" % d.name
+            print("Adjusting: %s" % d.name)
             d.adjust_time(hours=-2)
 
             #new instance of same directory to make sure file stats update
@@ -45,7 +46,7 @@ def adjust(path):
             d2.files_to_journal(filetype="Sound")
         
     else:
-        print node_type
+        print(node_type)
         
 def main():
     if len(sys.argv) > 1:

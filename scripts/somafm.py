@@ -6,7 +6,11 @@ requires BeautifulSoup
 
 for other screen scraping related tasks, see my 'communicate' python module
 """
-import urllib2, os, sys
+from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
+import urllib.request, urllib.error, urllib.parse, os, sys
 import BeautifulSoup
 
 #should allow the script to find moments module without installing it to python library
@@ -18,7 +22,7 @@ from moments.path import Path
 
 def lookup_playing(channel_id="groovesalad"):
     url = "http://somafm.com/%s/played" % channel_id
-    response = urllib2.urlopen(url)
+    response = urllib.request.urlopen(url)
     html = response.read()    
     soup = BeautifulSoup.BeautifulSoup(html)
     #print soup.prettify()
@@ -46,7 +50,7 @@ def lookup_playing(channel_id="groovesalad"):
                         text = link[0].contents[0]
                         url = link[0]['href']
                     else:
-                        print "No link: %s" % link
+                        print("No link: %s" % link)
                         text = ''
                 else:
                     text = td.contents[0]
@@ -78,9 +82,9 @@ def lookup_playing(channel_id="groovesalad"):
     e = j.make(data, tags)
     j.save(dest)
 
-    print ""
-    print e.render()    
-    print "Saved to: %s" % dest
+    print("")
+    print(e.render())    
+    print("Saved to: %s" % dest)
 
 def main():
     #valid channel_ids are:

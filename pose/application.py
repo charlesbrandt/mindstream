@@ -11,9 +11,13 @@ python journal_server.py /c/journal
 
 python application-split.py
 """
+from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
 
 import sys, os, re, codecs
-import urllib, urllib2
+import urllib.request, urllib.parse, urllib.error, urllib.request, urllib.error, urllib.parse
 
 #redefine standard python range:
 pyrange = range
@@ -41,7 +45,7 @@ except:
     try:
         import json
     except:
-        print "No json module found"
+        print("No json module found")
         exit()
         
 from moments.log import Log
@@ -79,7 +83,7 @@ if len(sys.argv) > 1:
     helps = ['--help', 'help', '-h']
     for i in helps:
         if i in sys.argv:
-            print "python application.py [directory to load]"
+            print("python application.py [directory to load]")
             exit()
 
     ports = ['--port', '-p']
@@ -98,12 +102,12 @@ if len(sys.argv) > 1:
 
 if len(sys.argv) > 1:
     look_in = sys.argv[1]
-    print "Look in: %s" % look_in
+    print("Look in: %s" % look_in)
 else:
     look_in = 'http://localhost:8000'
 
 
-print "Path root: %s" % path_root
+print("Path root: %s" % path_root)
 
 #should be able to call these directly if desired
 @server.route('/search/data/:key')
@@ -145,7 +149,7 @@ def search(key=None, limit=20):
 
 def css_static(filename):
     css_path = os.path.join(server_root, 'css')
-    print css_path
+    print(css_path)
     #return static_file(filename, root='./css')
     return static_file(filename, root=css_path)
 
@@ -194,7 +198,7 @@ def m3u(name='world'):
         prefix = "/media/disk/"
         full_path = os.path.join(prefix, first_line)
         if not os.path.exists(full_path):
-            print "Couldn't find: %s" % full_path
+            print("Couldn't find: %s" % full_path)
         m3u += full_path + '\n'
         
     return m3u
@@ -254,7 +258,7 @@ def timeline():
     
     counter = 0
     first = local_j.entry(counter)
-    while isinstance(first.created, str) or isinstance(first.created, unicode):
+    while isinstance(first.created, str) or isinstance(first.created, str):
         counter += 1
         first = local_j.entry(counter)
 
@@ -262,7 +266,7 @@ def timeline():
     
     counter = -1
     last = local_j.entry(counter)
-    while isinstance(last.created, str) or isinstance(last.created, unicode):
+    while isinstance(last.created, str) or isinstance(last.created, str):
         counter -= 1
         last = local_j.entry(counter)
 
@@ -321,7 +325,7 @@ def range(start=None, end=None):
         cloud.make()
 
         body = ''
-        body += "<p>%s total tags" % len(tags.keys())
+        body += "<p>%s total tags" % len(list(tags.keys()))
         body += " --- %s total entries</p>" % len(entries)
         body += cloud.render("/tagged/%s")
 
@@ -357,14 +361,14 @@ def clouds():
 
     cloud_file = os.path.join(path_root, 'clouds.txt')
     if not os.path.exists(cloud_file):
-        print "couldn't find cloud file: %s" % cloud_file
+        print("couldn't find cloud file: %s" % cloud_file)
         exit()
 
     clouds = Journal(cloud_file)
 
     body = ''
 
-    tags = clouds.tags().keys()
+    tags = list(clouds.tags().keys())
     #body = str(tags)
     tags.sort()
 
@@ -404,7 +408,7 @@ def cloud(name='world', ignore_cloud=False, preserve_order=True):
         #or local 'clouds.txt'
         cloud_file = os.path.join(path_root, 'clouds.txt')
         if not os.path.exists(cloud_file):
-            print "couldn't find cloud file: %s" % cloud_file
+            print("couldn't find cloud file: %s" % cloud_file)
             exit()
             
         clouds = Journal(cloud_file)
@@ -417,20 +421,20 @@ def cloud(name='world', ignore_cloud=False, preserve_order=True):
             if ignore_cloud:
                 #this should ignore any tags found in the loaded list
                 ignore_tags = tags_found
-                for t in all_tags.keys():
+                for t in list(all_tags.keys()):
                     if not t in ignore_tags:
                         tags[t] = all_tags[t]
                         order.append(t)
             else:
                 #this assumes the tags in clouds are what we want
                 for t in tags_found:
-                    if all_tags.has_key(t):
+                    if t in all_tags:
                         tags[t] = all_tags[t]
                         order.append(t)            
 
     else:
         tags = all_tags
-        order = all_tags.keys()
+        order = list(all_tags.keys())
         order.sort()
         
     #return template('site', body=str(tags))
@@ -442,7 +446,7 @@ def cloud(name='world', ignore_cloud=False, preserve_order=True):
     cloud.make()
 
     body = ''
-    body += "<p>%s total tags</p>" % len(tags.keys())
+    body += "<p>%s total tags</p>" % len(list(tags.keys()))
     body += cloud.render("/tagged/%s")
 
     title = "%s - cloud" % name
@@ -574,7 +578,7 @@ def image(relative=''):
     #if not re.match('/', relative):
     #    relative = os.path.join(path_root, relative)
 
-    print "SHOWING IMAGE: %s" % relative
+    print("SHOWING IMAGE: %s" % relative)
     path = Path(relative, relative_prefix=path_root)
     if path.type() == "Image":
         return static_file(relative, root=path_root)
@@ -593,7 +597,7 @@ def load_groups(full_source):
         #collections.scenes should have been loaded already
         #and star_order calculated
 
-        raise ValueError, "No order file: %s" % full_source
+        raise ValueError("No order file: %s" % full_source)
 
         #comment this out if you want to initialize a list from scratch:
         #groups = [ self.scenes.star_order, [], [], [], [], [], [], [], [], [], [], ]
@@ -617,7 +621,7 @@ def load_groups(full_source):
             groups = json.loads(split)
         except:
             #try to pinpoint where the error is occurring:
-            print split
+            print(split)
 
             #get rid of outer list:
             split = split[1:-1]
@@ -637,9 +641,9 @@ def load_groups(full_source):
 
                     #print count
                     #print summary
-                    print "%s - %s" % (count, summary)
+                    print("%s - %s" % (count, summary))
                     #raise ValueError, "Trouble loading JSON in part %s: %s" % (count, p)
-                    raise ValueError, "Trouble loading JSON in part %s: %s" % (count, summary)
+                    raise ValueError("Trouble loading JSON in part %s: %s" % (count, summary))
                 count += 1
 
 
@@ -682,7 +686,7 @@ def save_tabs(relative=''):
 
     if not relative:
         #could set a default here if it is desireable
-        print "NO DESTINATION SENT!"
+        print("NO DESTINATION SENT!")
     elif not re.match('/', relative):
         relative = path_root + relative
 
@@ -736,7 +740,7 @@ def sort(relative=''):
     tab_order = ['all', 'edit', "slide1", "slide2", "slide3", "slide4", "slide5", "slide6", "slide7", "slide8", "slide9"]
 
     path = Path(relative, relative_prefix=path_root)
-    print path
+    print(path)
     if path.exists() and path.type() == "Directory":
         response = "Error: need a file name to store the meta data in<br>"
         response = "You supplied a directory path: %s<br>" % path
@@ -784,7 +788,7 @@ def sort(relative=''):
                 #template expects all items in groups to be Path objects.
                 #do that now
                 groups = {}
-                for key, value in loaded.items():
+                for key, value in list(loaded.items()):
                     groups[key] = []
                     for v in value:
                         groups[key].append(Path(v))
@@ -793,19 +797,19 @@ def sort(relative=''):
 
         else:
             #dunno!
-            print "UNKNOWN FILE TYPE: %s" % relative
+            print("UNKNOWN FILE TYPE: %s" % relative)
             groups = {}
             destination = None
 
         #clean up tab_order as needed
-        for key in groups.keys():
+        for key in list(groups.keys()):
             if not key in tab_order:
                 tab_order.append(key)
         for item in tab_order[:]:
-            if item not in groups.keys():
+            if item not in list(groups.keys()):
                 tab_order.remove(item)
 
-        print tab_order
+        print(tab_order)
         
         #return template('sort', path=path, items=items)
         return template('sort', path=path, groups=groups, destination=destination, tab_order=tab_order)
@@ -843,7 +847,7 @@ def series(type="Image", relative=''):
                 count += 1
 
             if position is None:
-                raise ValueError, "Couldn't find matching image in directory: %s" % str(parent)
+                raise ValueError("Couldn't find matching image in directory: %s" % str(parent))
             else:
                 if position != 0:
                     prev_pos = position-1
