@@ -50,7 +50,7 @@ def _move_file(source, new_dir):
     #cp = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 
     result = "moving: %s" % source
-    result += mv.stdout.read()
+    result += mv.stdout.read().decode('utf-8')
 
     return result
 
@@ -87,7 +87,7 @@ def _move_files(source_dir, new_dir):
     #mv = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 
     result = "All finished with moving files.  Any output included below:<br>\n"
-    result += mv.stdout.read()
+    result += mv.stdout.read().decode('utf-8')
     result += "\n<br> All files moved to: %s" % new_dir
     result += "\n<br> Press Back to return <br> \n"
 
@@ -131,7 +131,7 @@ def _move_image_and_thumbs(source, new_dir):
     #cp = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 
     result = "moving: %s" % source_path
-    result += mv.stdout.read()
+    result += mv.stdout.read().decode('utf-8')
 
     #We have already moved/copied the files at this point.
     #Try to move thumbnails if they exist:
