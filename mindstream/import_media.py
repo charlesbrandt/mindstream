@@ -50,7 +50,7 @@ def _move_file(source, new_dir):
     #cp = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 
     result = "moving: %s" % source
-    result += mv.stdout.read().decode('utf-8')
+    result += mv.stdout.read()
 
     return result
 
@@ -87,7 +87,7 @@ def _move_files(source_dir, new_dir):
     #mv = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 
     result = "All finished with moving files.  Any output included below:<br>\n"
-    result += mv.stdout.read().decode('utf-8')
+    result += mv.stdout.read()
     result += "\n<br> All files moved to: %s" % new_dir
     result += "\n<br> Press Back to return <br> \n"
 
@@ -207,14 +207,17 @@ def check_dates(sources):
     dates = []
     for source in sources:
         p = Path(source)
-        d = p.load()
-        d.sort_by_date()
+        if p.exists():
+            d = p.load()
+            #print(d)
+            #print(type(d))
+            d.sort_by_date()
 
-        for fpath in d.files:
-            #print f.name
-            f = fpath.load()
-            if not f.date() in dates:
-                dates.append(f.date())
+            for fpath in d.files:
+                #print f.name
+                f = fpath.load()
+                if not f.date() in dates:
+                    dates.append(f.date())
 
     return dates
 
